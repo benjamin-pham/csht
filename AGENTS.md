@@ -1,3 +1,5 @@
+**BẮT BUỘC:** AI Agent phải tuân thủ nghiêm ngặt các tiêu chí [CONTRACT.md](./CONTRACT.md)
+
 # 📚 Hướng Dẫn Cấu Trúc Dự Án & Tài Liệu Học Tập
 
 Tài liệu này cung cấp hướng dẫn tra cứu và các liên kết điều hướng nhanh đến các thư mục tài liệu môn học, bài giảng của cô, cùng hướng dẫn đồ án và thực hành.
