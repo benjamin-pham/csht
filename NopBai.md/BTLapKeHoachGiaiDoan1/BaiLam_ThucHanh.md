@@ -73,18 +73,25 @@ Toàn bộ hệ thống phần mềm không áp dụng các KPI phân rã theo t
 
 1. **Thời gian đáp ứng của dịch vụ API (API Response Time):**
    - *KPI:* Thời gian phản hồi API thời gian thực $\le 500\text{ms}$ ở phân vị thứ 95 ($P95$); thời gian xử lý toàn bộ dữ liệu dự báo theo lô định kỳ ban đêm (Batch Job) $\le 30$ phút.
+   - *Công thức:* $P95 \le 500\text{ms}$ (Đảm bảo 95% tổng số lượng request có thời gian xử lý và trả kết quả dưới 500ms).
+   - *Trích dẫn:* AWS (2021), *Latency and Percentiles* [6].
 
 2. **Tính sẵn sàng của dịch vụ phần mềm (Software Availability / Uptime):**
    - *KPI:* $\text{Uptime} \ge 99.9\%$ (tổng thời gian gián đoạn dịch vụ API tối đa không quá 43.2 phút/tháng).
+   - *Công thức:* $\text{Uptime} = \frac{\text{Tổng thời gian vận hành (Total Time)} - \text{Thời gian gián đoạn (Downtime)}}{\text{Tổng thời gian vận hành (Total Time)}} \times 100\%$
    - *Trích dẫn:* Google Cloud, *Site Reliability Engineering - Availability Metrics* [4].
 
 3. **Chất lượng và độ toàn vẹn của luồng dữ liệu (Data Pipeline Quality):**
    - *KPI Tính đầy đủ (Completeness):* $\ge 99.5\%$ bản ghi giao dịch POS được trích xuất, làm sạch và nạp thành công vào Data Warehouse.
+   - *Công thức tính đầy đủ:* $\text{Completeness} = \frac{\text{Số lượng bản ghi nạp thành công}}{\text{Tổng số bản ghi gốc tại POS}} \times 100\%$
    - *KPI Tính kịp thời (Data Freshness):* Độ trễ luồng dữ liệu $\le 24$ giờ (hoàn tất đồng bộ dữ liệu lúc 01:00 AM mỗi ngày).
+   - *Công thức tính kịp thời:* $\Delta t_{freshness} = t_{\text{Data Warehouse}} - t_{\text{POS}} \le 24\text{h}$
    - *Trích dẫn:* ISO/IEC 25012: Data quality model [5].
 
 4. **Tỷ lệ lỗi dịch vụ (API Error Rate):**
    - *KPI:* Tỷ lệ lỗi máy chủ (HTTP 5xx) $< 0.1\%$ trên tổng số lượt gọi API.
+   - *Công thức:* $\text{Error Rate} = \frac{\text{Số lượng phản hồi lỗi (HTTP 5xx)}}{\text{Tổng số lượng request đến API}} \times 100\%$
+   - *Trích dẫn:* Google Cloud, *Site Reliability Engineering - Error Rates* [7].
 
 ---
 
@@ -116,4 +123,6 @@ Nhằm đảm bảo tính xuyên suốt từ thiết kế đến nghiệm thu v�
 [2] Scikit-Learn (n.d.), *Mean absolute error*, truy cập tại: https://scikit-learn.org/stable/modules/model_evaluation.html#mean-absolute-error  
 [3] Powers, D. M. W. (2011), *Evaluation: from precision, recall and F-measure to ROC, informedness, markedness and correlation*, Journal of Machine Learning Technologies, 2(1), pp. 37–63.  
 [4] Google Cloud (n.d.), *Site Reliability Engineering - Availability Table and Metrics*, truy cập tại: https://sre.google/sre-book/availability-table/  
-[5] ISO/IEC (2008), *ISO/IEC 25012: Data quality model*, truy cập tại: https://www.iso.org/standard/35736.html
+[5] ISO/IEC (2008), *ISO/IEC 25012: Data quality model*, truy cập tại: https://www.iso.org/standard/35736.html  
+[6] AWS (2021), *Amazon Builders' Library: Latency and Percentiles*, truy cập tại: https://aws.amazon.com/builders-library/latency-and-percentiles/  
+[7] Google Cloud (n.d.), *Site Reliability Engineering - Error Rates*, truy cập tại: https://sre.google/sre-book/service-level-objectives/#error-rate-metrics
