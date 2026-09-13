@@ -47,6 +47,7 @@ Toàn bộ hệ thống phần mềm không áp dụng các KPI phân rã theo t
    - *Công thức:*
      $$\text{MAPE} = \frac{1}{n} \sum_{i=1}^{n} \left| \frac{y_i - \hat{y}_i}{y_i} \right| \times 100\%$$
    - *Diễn giải & Phương pháp tính:* Đo lường mức độ chênh lệch phần trăm giữa lưu lượng khách thực tế ($y_i$) và lưu lượng dự báo ($\hat{y}_i$). Giá trị $< 10\%$ khẳng định mô hình đạt độ chính xác dự báo tương đương $> 90\%$.
+   - *Baseline đối chứng:* Phương pháp dự báo truyền thống Moving Average 7 ngày cho MAPE ước tính ~25-30%; mô hình ARIMA(1,1,1) cho MAPE ước tính ~18-22% (theo khảo sát vận hành và tham khảo nghiên cứu của Hyndman & Athanasopoulos [[8]](#ref8)). Mô hình AI cam kết **cải thiện sai số tối thiểu 10%** so với phương pháp Baseline tốt nhất và duy trì **độ chênh lệch hiệu suất $\Delta \le 10\%$** giữa các ngữ cảnh dữ liệu khác nhau (chi nhánh Gym vs Gaming vs Hub) trên tối thiểu 4 bộ dữ liệu kiểm thử.
    - *Trích dẫn:* Scikit-Learn, *Mean absolute percentage error* [1].
 
 2. **Sai số tuyệt đối trung bình (MAE - Mean Absolute Error):**
@@ -86,6 +87,7 @@ Toàn bộ hệ thống phần mềm không áp dụng các KPI phân rã theo t
    - *Công thức tính đầy đủ:* $\text{Completeness} = \frac{\text{Số lượng bản ghi nạp thành công}}{\text{Tổng số bản ghi gốc tại POS}} \times 100\%$
    - *KPI Tính kịp thời (Data Freshness):* Độ trễ luồng dữ liệu $\le 24$ giờ (hoàn tất đồng bộ dữ liệu lúc 01:00 AM mỗi ngày).
    - *Công thức tính kịp thời:* $\Delta t_{freshness} = t_{\text{Data Warehouse}} - t_{\text{POS}} \le 24\text{h}$
+   - *Lưu ý phân biệt với Đồ án:* Đồ án hạ tầng cam kết Data Freshness $\le 5s$ (real-time streaming qua CDC) cho toàn bộ nền tảng dữ liệu tập trung. Tại bài Thực hành, luồng huấn luyện mô hình AI sử dụng kiến trúc Batch Processing xử lý dữ liệu lịch sử theo lô hàng đêm (không yêu cầu real-time) nên mục tiêu $\le 24\text{h}$ là phù hợp với đặc thù bài toán dự báo chuỗi thời gian.
    - *Trích dẫn:* ISO/IEC 25012: Data quality model [5].
 
 4. **Tỷ lệ lỗi dịch vụ (API Error Rate):**
@@ -126,3 +128,4 @@ Nhằm đảm bảo tính xuyên suốt từ thiết kế đến nghiệm thu v�
 [5] ISO/IEC (2008), *ISO/IEC 25012: Data quality model*, truy cập tại: https://www.iso.org/standard/35736.html  
 [6] AWS (2021), *Amazon Builders' Library: Latency and Percentiles*, truy cập tại: https://aws.amazon.com/builders-library/latency-and-percentiles/  
 [7] Google Cloud (n.d.), *Site Reliability Engineering - Error Rates*, truy cập tại: https://sre.google/sre-book/service-level-objectives/#error-rate-metrics
+[8] Hyndman, R. J. & Athanasopoulos, G. (2021), *Forecasting: Principles and Practice*, 3rd edition, OTexts, truy cập tại: https://otexts.com/fpp3/

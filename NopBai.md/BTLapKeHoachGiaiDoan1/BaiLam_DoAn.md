@@ -48,8 +48,14 @@ Bộ KPI kỹ thuật được thiết lập theo chuẩn quốc tế nhằm gi�
 
 4. **KPI 2.2 - Sai số dự báo mô hình AI (MAPE) $< 15\%$ (Chuẩn Scikit-Learn):**
    - *Công thức:* $MAPE = \frac{1}{n} \sum_{i=1}^{n} \left| \frac{y_i - \hat{y}_i}{y_i} \right| \times 100\%$ *(Với $y_i$ là số khách thực tế, $\hat{y}_i$ là dự báo).*
+   - *Cam kết Baseline:* Mô hình AI phải cải thiện sai số dự báo **tối thiểu 10%** so với phương pháp dự báo truyền thống (Moving Average 7 ngày, Baseline MAPE ước tính ~25-30% theo khảo sát vận hành hiện tại). Độ chênh lệch hiệu suất giữa các ngữ cảnh dữ liệu khác nhau (chi nhánh Gym vs Gaming vs Hub) không vượt quá $\Delta \le 10\%$.
 
-5. **KPI 3.2 - Mục tiêu điểm khôi phục (RPO) $\le 15$ phút (Chuẩn AWS DR):**
+5. **KPI 3.1 - Tỷ lệ mã hóa dữ liệu PII = 100% (Chuẩn NIST SP 800-175B):**
+   - *Công thức:* $\text{Encryption Coverage} = \frac{\text{Số trường PII được mã hóa AES-256}}{\text{Tổng số trường PII trong hệ thống}} \times 100\%$
+   - *Ràng buộc:* Toàn bộ dữ liệu nhạy cảm (ảnh CCCD, Face ID, số điện thoại) phải được mã hóa 100% cả khi lưu trữ (at-rest) và khi truyền tải (in-transit), chuyển từ hiện trạng 0% sang mục tiêu 100%.
+   - *Trích dẫn:* NIST (2020), *SP 800-175B: Guideline for Using Cryptographic Standards in the Federal Government* [[6]](#ref6).
+
+6. **KPI 3.2 - Mục tiêu điểm khôi phục (RPO) $\le 15$ phút (Chuẩn AWS DR):**
    - *Ý nghĩa:* Dung sai mất mát dữ liệu tối đa tính từ thời điểm thảm họa xảy ra là 15 phút.
 
 ## BƯỚC 4: XÂY DỰNG PHƯƠNG ÁN KIẾN TRÚC TO-BE
@@ -82,3 +88,4 @@ Kiến trúc Hybrid Cloud là giải pháp duy nhất cân bằng hoàn hảo gi
 <a id="ref3"></a>[3] AWS (n.d.), *Disaster Recovery Objectives (RTO and RPO)*, truy cập tại: https://aws.amazon.com/disaster-recovery/
 <a id="ref4"></a>[4] Google Cloud (n.d.), *Site Reliability Engineering (SRE) - Availability Table and Metrics*, truy cập tại: https://sre.google/sre-book/availability-table/
 <a id="ref5"></a>[5] ISO/IEC (2008), *ISO/IEC 25012: Data quality model*, truy cập tại: https://www.iso.org/standard/35736.html
+<a id="ref6"></a>[6] NIST (2020), *SP 800-175B Rev. 1: Guideline for Using Cryptographic Standards in the Federal Government: Cryptographic Mechanisms*, truy cập tại: https://csrc.nist.gov/publications/detail/sp/800-175b/rev-1/final
