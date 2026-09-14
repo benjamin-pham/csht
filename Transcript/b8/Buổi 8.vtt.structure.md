@@ -1,64 +1,62 @@
-# Buổi 8: Hướng dẫn thi Vấn đáp, Bảo mật hạ tầng và Quản trị rủi ro
+# Buổi 8: Bảo mật hạ tầng và quản trị rủi ro
 
-## 📌 Các Yêu Cầu & Nhắc Nhở Quan Trọng
-- Buổi học này là buổi cuối cùng trước khi thi vấn đáp vào **ngày 20 tháng 9 (Chủ nhật)**.
-- **Quy định khi thi vấn đáp:**
-  - Buổi thi sẽ hỏi chung cho cả **Thực hành** và **Đồ án**.
-  - Các nhóm hỏi đúng trọng tâm vào những điểm chưa rõ về các bước tiến hành. Giảng viên sẽ chỉ hướng dẫn, định hướng cách sửa lỗi chứ không chấm trước và review toàn bộ sản phẩm.
-  - Phải tham gia đầy đủ các thành viên. Trường hợp vắng thi không phép sẽ không có điểm. Trường hợp vắng có lý do chính đáng phải báo trước để cô xem xét yêu cầu thay thế (ví dụ: vấn đáp qua video riêng).
-  - Khi thi vấn đáp, giảng viên có thể hỏi chung để cả nhóm cùng trả lời và hỗ trợ nhau. Tuy nhiên, giảng viên cũng có thể gọi đích danh từng thành viên, khi đó bắt buộc người được gọi phải tự trả lời để kiểm tra mức độ nắm bài.
-  - Nhóm trưởng cần cập nhật lại ngay danh sách thành viên nếu có sự thay đổi (ví dụ: có bạn rút hồ sơ học).
+## 📌 Yêu cầu & Nhắc nhở
+- **Chuẩn bị thi vấn đáp:**
+  - Ngày thi: Chủ nhật (20/09).
+  - Các nhóm phải hoàn thiện tất cả các sản phẩm yêu cầu trước khi báo cáo và tải (upload) lên Drive. (Ví dụ: Thuyết minh đề tài, Slide báo cáo, Video báo cáo, v.v.). Hạn chót upload là trước giờ thi vấn đáp (18h00 ngày 20/09).
+  - Nhóm trưởng tạo thư mục `Bài tập thực hành` và `Bài tập đồ án` trên Drive và upload bài lên đầy đủ. Đối với các link bài tập trước đây nếu bị miss chưa nộp trên e-learning thì cứ upload lên Drive.
+  - **Quy cách nộp bài:** Bắt buộc phải có **một file/thư mục Final duy nhất** để bên ngoài cùng cho cô chấm điểm (Ví dụ: `Final 1`, `Final 2`). Các bản nháp, tài liệu tham khảo hay công việc chia lẻ của từng cá nhân (Section 1, Section 2) phải để vào trong thư mục con riêng (như `Draft`, `Reference`). Nếu để file rải rác lộn xộn, cô sẽ không chấm và coi như không hoàn thiện (bị trừ điểm hoặc 0 điểm).
+  - **Điểm danh & Vắng mặt:** Thi vấn đáp bắt buộc phải có mặt đầy đủ tất cả thành viên trong nhóm. Nhóm đủ thành viên mới được thi. Nếu vắng mặt không lý do, sinh viên đó sẽ **không có điểm**. Nếu vắng có lý do chính đáng và được cô duyệt, sinh viên đó phải báo trước và có thể được yêu cầu làm một video vấn đáp thay thế với các yêu cầu riêng từ cô. Sinh viên không tham gia làm việc nhóm sẽ bị mời ra khỏi nhóm và nhận 0 điểm.
 
 ## 📝 Bài tập & Đồ án
+- **Bài tập trên lớp:** Hoàn thiện và nộp các bài tập đã giao. Nội dung bài giảng chương 7, chương 8 hôm nay sẽ không giao thành bài tập riêng mà các nhóm sẽ tự động áp dụng kiến thức vào để hoàn thiện bài Thực hành và Đồ án môn học.
+- **Thực hành & Đồ án môn học:**
+  - Thực hành và đồ án là **đánh giá cá nhân**. Do đó, mỗi bạn làm phần nào thì phải báo cáo phần đó. Dù chia cặp hoặc chia nhóm nhỏ, thì khi tổng hợp lại tất cả các bạn phải nắm được luồng quy trình thực hiện, để có điểm thực hành và đồ án.
+  - Bảng đánh giá thành viên phải được tách riêng thành 3 cột (Bài tập trên lớp, Thực hành, Đồ án) theo đúng mức độ đóng góp thực tế.
+  - **Yêu cầu quay video báo cáo:**
+    - Thay thế cho việc báo cáo thuyết trình trực tiếp tại buổi thi để tiết kiệm thời gian.
+    - Cần **mở camera** (bật cam) khi báo cáo để xác minh người trình bày.
+    - **Thời lượng:** Tối đa 1 tiếng cho video Thực hành và tối đa 1 tiếng cho video Đồ án môn học (cô khuyên nên chắt lọc, đi vào trọng tâm, có thể làm trong khoảng 45 phút là vừa đẹp).
+    - **Hình thức quay & Nộp video:** 
+      - Cần có phần mở đầu giới thiệu tổng quan, quy định chung và phần kết luận dự án (thường do nhóm trưởng hoặc chủ nhiệm dự án trình bày). Sau đó từng thành viên trình bày phần công việc chi tiết của mình.
+      - *Cách 1 (Nhanh nhất):* Tổ chức một buổi họp trực tuyến (Google Meet/Teams) có mặt đầy đủ thành viên, cùng nhau báo cáo và record lại thành một video duy nhất.
+      - *Cách 2:* Nếu không thể sắp xếp lịch chung, từng thành viên tự quay video phần của mình, sau đó **nhóm phải edit và ghép lại thành một video Final duy nhất** theo đúng trình tự logic bài làm. **Tuyệt đối không** nộp nhiều video rời rạc của từng người (sẽ bị trừ điểm nặng).
+  - **Viết Thuyết minh đề tài:**
+    - Đây là bản kế hoạch dự kiến thực hiện dự án/phần mềm. Không phải là một bài báo cáo sau khi đã làm xong. Do đó, tập trung vào lập luận chứng minh năng lực thực hiện, phương án triển khai hợp lý và cách đánh giá nghiệm thu.
+    - Không bắt buộc theo một Form mẫu cứng nhắc nào. Cô đã cho mục lục gợi ý, nhóm có thể tự hiệu chỉnh lại thành một file Word sao cho hợp lý và logic.
+    - **Độ dài:** Viết ngắn gọn, súc tích, đi vào trọng tâm. Thường dao động khoảng 20 trang đối với dự án nhỏ, và dưới 50 trang với dự án quy mô lớn.
+  - **Hình thức thi vấn đáp:**
+    - Cô sẽ xem video báo cáo trước. Vào buổi thi, cô muốn hỏi phần nào sẽ hỏi phần đó (không nhất thiết theo thứ tự từ đầu đến cuối).
+    - Các thành viên trong nhóm có thể hỗ trợ nhau trả lời để lấy điểm nhóm. Tuy nhiên, nếu cô phát hiện có gian lận hoặc muốn kiểm tra mức độ hiểu bài của một bạn bất kỳ, cô sẽ **chỉ định đích danh** và bạn đó bắt buộc phải tự trả lời.
 
-### 1. Chuẩn bị tài liệu trước khi thi vấn đáp
-- Hoàn thiện tất cả các sản phẩm yêu cầu trước giờ báo cáo (hạn chót là trước 18:00 ngày thi).
-- Nộp bài bằng cách upload toàn bộ file sản phẩm lên Google Drive của nhóm. Không bắt buộc phải nộp lại tất cả file trên E-learning (chỉ bổ sung nếu trước đó nộp thiếu).
-- Từ bài học này, sẽ không giao bài tập mới trên lớp. Sinh viên tự áp dụng kiến thức vào hoàn thiện luôn cho bài Thực hành và Đồ án.
+## 📚 Nội dung bài giảng: Bảo mật hạ tầng và quản trị rủi ro
 
-### 2. Quy định về Thư mục và File Nộp bài
-- Cấu trúc thư mục phải đúng theo hướng dẫn.
-- **Bắt buộc** phải có duy nhất một file **Final** tổng hợp bài làm để ngay bên ngoài cùng của thư mục để giảng viên chấm.
-- Các file làm nháp, thư mục con, tài liệu tham khảo, code nháp phải được dọn dẹp gọn gàng, đưa vào các thư mục con phân loại riêng.
-- Nếu nộp bài rải rác, không có file Final tổng hợp hoặc để lộn xộn, giảng viên sẽ **không chấm điểm phần đó** hoặc **trừ điểm nặng**.
+**1. Khái niệm An toàn thông tin**
+- Là quá trình bảo vệ dữ liệu, hệ thống, dịch vụ và hạ tầng CNTT khỏi các hành vi truy cập trái phép, sửa đổi dữ liệu bất hợp pháp, gây gián đoạn dịch vụ hoặc phá hoại hệ thống.
+- Yêu cầu thiết yếu đối với mọi hệ thống: Các phần mềm/hệ thống triển khai cho doanh nghiệp bắt buộc phải có yếu tố an toàn thông tin để đảm bảo uy tín của doanh nghiệp và bảo mật thông tin cá nhân của người dùng cuối. 
+- *Ví dụ về rủi ro:* Tài khoản sinh viên bị đánh cắp, website trường bị tấn công gián đoạn, cơ sở dữ liệu bị chỉnh sửa trái phép gây mất tính minh bạch.
+- *Ví dụ ứng dụng nâng cao:* Công nghệ Blockchain được nghiên cứu và áp dụng nhiều trong an toàn thông tin để đảm bảo dữ liệu "không thể bị sửa đổi bất hợp pháp", giúp truy xuất nguồn gốc (như truy xuất thực phẩm sạch) hoặc quản lý giao dịch minh bạch.
 
-### 3. Yêu cầu về Video Báo cáo (Thay thế cho Thuyết trình trực tiếp)
-- Nhóm phải chuẩn bị 2 video riêng biệt: **Video cho phần Thực hành** và **Video cho phần Đồ án**.
-- **Tất cả các thành viên đều phải tham gia báo cáo và phải mở camera** để giảng viên kiểm tra.
-- **Cách thức thực hiện:**
-  - *Cách 1 (Khuyến khích):* Cả nhóm tạo phòng meeting (Google Meet, Teams...), cùng tham gia báo cáo theo thứ tự và quay video lại 1 lần.
-  - *Cách 2:* Nếu không sắp xếp được thời gian chung, mỗi thành viên tự quay video báo cáo phần công việc được giao. Sau đó, nhóm phải **tự cắt ghép, chỉnh sửa (edit)** để nối lại thành 1 video Final hoàn chỉnh, liền mạch, đúng thứ tự nội dung báo cáo. (Tuyệt đối không gửi nhiều video rời rạc lẻ tẻ).
-- **Thời lượng:** Giới hạn tối đa 1 tiếng mỗi video (khuyên dùng trình bày trọng tâm trong khoảng 15 đến 45 phút). Tránh đọc slide lê thê, không đi vào trọng tâm.
+**2. Tam giác bất đối xứng (Ba trụ cột của An toàn thông tin)**
+- Gồm 3 yếu tố: **Bảo mật dữ liệu (Confidentiality) - Toàn vẹn dữ liệu (Integrity) - Tính sẵn sàng (Availability)**.
+- Rất khó để một hệ thống đạt được cùng lúc cả 3 yếu tố này ở mức tối đa. Thường luôn có sự **đánh đổi**:
+  - Nếu muốn hệ thống bảo mật cực cao, chống sửa đổi tốt (bắt người dùng xác thực nhiều lớp, mã hóa phức tạp) -> Hệ thống sẽ xử lý chậm, kém thân thiện với người dùng, giảm tính sẵn sàng.
+  - Ngược lại, nếu muốn hệ thống chạy nhanh, dễ sử dụng -> Phải giảm bớt các bước xác thực, dẫn đến tính bảo mật kém hơn.
+- Khi triển khai hệ thống, cần xác định rõ quy trình/chức năng nào là sống còn để ưu tiên bảo mật cao, và chức năng nào cần tính sẵn sàng/nhanh nhạy thì hạ bớt tiêu chuẩn bảo mật.
 
-### 4. Định dạng và Cấu trúc Báo cáo Thuyết minh
-- **Tính tổng hợp:** Không được copy ghép nối một cách thô sơ các bài tập trên lớp thành báo cáo cuối kỳ. Phải tổng hợp và biên tập lại thành một file Thuyết minh/Báo cáo Dự án đầu tư hoàn chỉnh và hợp lý.
-- **Form mẫu:** Sinh viên không bị bắt buộc viết theo một form mẫu cố định nào, có thể tự do sáng tạo hoặc dựa trên mẫu mục lục gợi ý của giảng viên để xây dựng định dạng báo cáo riêng cho nhóm.
-- **Độ dài và chi tiết:**
-  - **Dự án đầu tư (Đồ án):** Cần viết chi tiết để minh chứng tính hợp lý của hạ tầng, báo giá và kế hoạch vận hành.
-  - **Thuyết minh phần mềm (Thực hành):** Thường ngắn gọn hơn (dưới 20 trang hoặc dưới 50 trang tùy quy mô). Chỉ cần tập trung chứng minh năng lực triển khai, kế hoạch thực hiện, không cần cam kết quá chi tiết chức năng bên trong nếu chưa code hoặc đang áp dụng công nghệ mới có rủi ro.
+**3. Các chiến lược và nguyên tắc giảm thiểu rủi ro**
+- **Kiểm soát truy cập, xác thực và phân quyền:** Xác định rõ ai được quyền truy cập vào tài nguyên nào và được thao tác những gì. Lập kế hoạch phân quyền rõ ràng trong thuyết minh để thuyết phục khách hàng.
+- **Sao lưu dữ liệu (Backup):** Áp dụng nguyên tắc "3-2-1" (3 bản sao, 2 loại thiết bị lưu trữ khác nhau, 1 bản lưu ở nơi khác như Cloud/hệ thống cách ly). Trong đầu tư dự án, phải đảm bảo mua sắm đủ thiết bị lưu trữ (Server/Hard drive) phòng hờ rủi ro.
+- **Cập nhật và vá lỗi thường xuyên:** Lên chiến lược bảo trì, vận hành và dự trù chi phí.
+- **Phòng chống mã độc:** Cần có ngân sách đầu tư các phần mềm chống mã độc có bản quyền từ giai đoạn thiết kế hạ tầng.
+- **Kiểm soát cấu hình (Configuration):** Hệ thống thường bị tấn công do cấu hình sai. Cần có Checklist các bước cấu hình chuẩn khi triển khai, và có cơ chế kiểm tra mặc định liên tục.
+- **Nguyên tắc "Zero Trust":** Không mặc định tin cậy bất cứ người dùng hay thiết bị nào, bảo vệ nhiều lớp.
+- **Mã hóa dữ liệu:** Chiến lược mã hóa thông tin quan trọng để chống rò rỉ dữ liệu.
 
-## 📚 Nội dung bài giảng: Bảo mật Hạ tầng & Quản trị rủi ro
-
-### 1. Tổng quan về An toàn Thông tin
-- Là quá trình bảo vệ dữ liệu, hệ thống, dịch vụ và hạ tầng CNTT khỏi việc truy cập trái phép, thay đổi dữ liệu bất hợp pháp, phá hoại hoặc làm gián đoạn dịch vụ.
-- An toàn thông tin bắt buộc phải đi đôi với quản trị rủi ro. Đảm bảo bảo mật cũng là đảm bảo tính uy tín cho doanh nghiệp khi thu thập, xử lý dữ liệu người dùng.
-
-### 2. Tam giác Bất đối xứng trong An toàn thông tin
-Khi thiết kế một hệ thống, rất khó để đạt được cả 3 yếu tố hoàn hảo cùng lúc, thường sẽ phải đánh đổi:
-- **Tính bảo mật (Confidentiality):** Ngăn chặn người dùng không hợp lệ.
-- **Tính toàn vẹn (Integrity):** Ngăn chặn sự thay đổi dữ liệu trái phép, minh bạch thông tin (VD: Công nghệ Blockchain thường được ứng dụng để tối ưu tính năng này, phục vụ cho việc truy vết nguồn gốc sản phẩm).
-- **Tính sẵn sàng (Availability):** Tốc độ phản hồi, sự thân thiện với người dùng và đảm bảo hệ thống luôn sẵn sàng.
-> *Ví dụ:* Một hệ thống muốn nâng cao tính bảo mật và tính toàn vẹn (xác thực nhiều lớp) thì sẽ làm giảm trải nghiệm thân thiện của người dùng và làm tốc độ xử lý chậm lại. Do đó, cần tinh chỉnh các yếu tố này phù hợp với từng phân hệ của quy trình.
-
-### 3. Biện pháp Kiểm soát & Giảm thiểu Rủi ro
-- **Xác thực và phân quyền:** Kiểm soát chặt chẽ ai được truy cập tài nguyên nào và thực hiện hành động gì.
-- **Chiến lược Sao lưu (Backup):** Áp dụng quy tắc 3-2-1: 3 bản sao, 2 thiết bị/phương tiện lưu trữ khác nhau, 1 bản lưu trữ ngoài (cloud) hoặc hệ thống dự phòng.
-- **Các rủi ro cần đối phó:** Phần mềm độc hại, lừa đảo thông tin cá nhân (Phishing), lộ dữ liệu, cấu hình sai. Cần mua bản quyền các phần mềm chống mã độc, mã hóa thông tin nhạy cảm.
-- **Nguyên tắc cốt lõi:** Cấp quyền tối thiểu (Least Privilege), bảo vệ nhiều lớp, không mặc định tin cậy bất cứ yếu tố nào, cập nhật và vá lỗi thường xuyên, luôn giám sát hệ thống.
-
-### 4. Xây dựng Tiêu chí Đánh giá & Nghiệm thu
-Trong quá trình triển khai, cần xây dựng các tiêu chí đánh giá dự án chặt chẽ:
-- **Tiêu chí định lượng:** Các thông số kỹ thuật được đo lường cụ thể thông qua công thức toán học.
-- **Tiêu chí định tính:** Thường dùng để đánh giá độ hài lòng, chất lượng chức năng (VD: Thang đo 3 cấp độ hoặc 5 cấp độ như Rất thấp - Thấp - Trung bình - Cao - Rất cao).
-- Việc nghiệm thu và thanh lý hợp đồng phụ thuộc hoàn toàn vào những số liệu đo lường cụ thể này, tránh trường hợp đưa ra các cam kết nói suông, không có cơ sở chứng minh dẫn đến dự án bị đánh rớt.
-
+**4. Ứng dụng xây dựng Thuyết minh đề tài & Dự án đầu tư**
+- Các đề tài xin kinh phí (hoặc triển khai cho khách hàng) cần phải có quy trình các bước: Khảo sát -> Thiết kế -> Triển khai (Cài đặt/Code) -> Kiểm thử -> Nghiệm thu.
+- **Đề xuất phương án:** Khi có nhiều phương án (ví dụ 3 phương án triển khai), cần dựa trên các ràng buộc và kỳ vọng của khách hàng, sau đó lập bảng chấm điểm để chọn ra phương án tối ưu nhất.
+- **Xây dựng tiêu chí đánh giá (Nghiệm thu):** 
+  - Là cơ sở quan trọng nhất để thanh lý và nghiệm thu hợp đồng với khách hàng. Phải có số liệu, chỉ số rõ ràng tránh tình trạng "cam kết nói suông" gây tranh chấp.
+  - **Định lượng:** Đo lường bằng các con số, công thức toán học minh bạch.
+  - **Định tính:** Đo lường mức độ đạt yêu cầu, sự hài lòng của người dùng. Sử dụng các thang đo như Thang 3 cấp độ (Đạt / Trung tính / Không đạt) hoặc Thang 5 cấp độ (Rất kém - Kém - Trung bình - Tốt - Rất Tốt / 1 sao - 5 sao). Cần miêu tả rõ ý nghĩa của mỗi cấp độ đo trong tài liệu.
