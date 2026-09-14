@@ -1,58 +1,51 @@
-# Buổi 3: Khảo Sát Kiến Trúc Hạ Tầng, Phần Cứng & Lưu Trữ
+# Buổi 3: Sửa bài tập, Khái niệm Phần cứng & Lưu trữ, Hướng dẫn Đồ án (Bước 0)
 
-## 1. Sửa Bài Tập & Góp Ý Đồ Án (Nhóm 6 - Giao Hàng Nhanh)
-- **Đánh giá chung:** Bài làm khảo sát các lớp năng lực của nhóm khá tốt, đã tìm hiểu được các thành phần, thiết bị công nghệ phổ biến. Tuy nhiên, bài tập trên lớp chỉ yêu cầu tìm hiểu khái quát, không bắt buộc phải đặt vào ngữ cảnh một doanh nghiệp cụ thể (trừ khi đó là doanh nghiệp làm đồ án).
-- **Yêu cầu đối với đề xuất thuyết minh đồ án:** 
-  - Các sinh viên phải đóng vai trò là người đưa ra giải pháp, kế hoạch đầu tư hạ tầng cho doanh nghiệp.
-  - Cần phải giải thích lý do lựa chọn công nghệ/thiết bị, đưa ra các luận điểm về hiệu quả và lợi ích mang lại nhằm thuyết phục nhà đầu tư phê duyệt dự án.
+## 1. Sửa bài tập nhóm & Góp ý của cô
+- **Phần trình bày của Nhóm 6 (Giao Hàng Nhanh):** Nhóm trình bày về 5 lớp năng lực hạ tầng CNTT tại công ty Giao Hàng Nhanh (GHN), bao gồm các phân tích chi tiết về phần cứng, phần mềm, mạng, quản trị, bảo mật và nền tảng dữ liệu.
+- **Nhận xét & Định hướng của cô:**
+  - Đánh giá cao phần tìm hiểu công nghệ và thiết bị của nhóm.
+  - **Lưu ý chung cho các nhóm:** Khi làm bài tập/đồ án, không bắt buộc phải chọn một doanh nghiệp quá cụ thể (có thể giả định bối cảnh chung). Tuy nhiên, khi làm đồ án, cần đưa ra quyết định lựa chọn thiết bị/công nghệ cụ thể và **phải giải thích được lý do** lựa chọn để thuyết phục nhà đầu tư.
+  - **Giới hạn phạm vi đồ án:** Khuyến khích các nhóm **không nên ôm đồm cả 5 lớp năng lực**. Nên chọn từ **1 đến 3 lớp** (thường là lớp 2, 4, 5) để nghiên cứu sâu. 
+  - Có thể **giả lập hiện trạng**: Cho phép giả định công ty đã có sẵn hạ tầng phần cứng và mạng ổn định, chỉ tập trung đề xuất đầu tư vào **phần mềm, quản trị và bảo mật** (phù hợp hơn với sinh viên chuyên ngành CNTT/Phần mềm).
 
-## 2. Hướng Dẫn & Yêu Cầu Về Đồ Án Môn Học
-- **Phạm vi đầu tư & Lựa chọn lớp năng lực:**
-  - **Không nên ôm đồm cả 5 lớp năng lực.** Cô khuyến nghị chỉ nên chọn từ **1 đến 3 lớp năng lực** để nghiên cứu sâu. 
-  - Với đặc thù ngành CNTT, sinh viên nên tập trung vào **lớp 2 (Ứng dụng), lớp 4 (Tích hợp) và lớp 5 (Dữ liệu)**. Đặc biệt lớp dữ liệu (Data Platform) là nền tảng cốt lõi không thể thiếu cho các công nghệ mới hiện nay như Trí tuệ nhân tạo (AI), Data Lake, Data Warehouse.
-  - **Giả lập hạ tầng:** Sinh viên có quyền giả lập phần cứng và mạng của doanh nghiệp đã ổn định, chỉ tập trung đề xuất đầu tư cho các thành phần: **Phần mềm, Quản trị và Bảo mật**.
-- **Cách đặt vấn đề (Tính cấp thiết & Tính mới):**
-  - Phải khảo sát bối cảnh doanh nghiệp, xác định các nút thắt/nhu cầu hiện tại (VD: Dữ liệu chưa đồng bộ giữa các chi nhánh, tỷ lệ sinh viên rớt tốt nghiệp cao do không có cảnh báo sớm...).
-  - **Tính cấp thiết:** Việc đầu tư hệ thống/nền tảng sẽ giải quyết triệt để vấn đề thực tế nào của doanh nghiệp.
-  - **Tính mới:** Áp dụng các công nghệ mới (như AI dự đoán/cảnh báo sớm) vào hệ thống thay vì chỉ quản lý dữ liệu thông thường.
-- **Quy định đổi đề tài:** 
-  - Hạn chế tối đa việc đổi đề tài vì sẽ mất thời gian làm lại từ đầu. 
-  - Nếu bắt buộc đổi, hạn chót là **buổi sửa bài đồ án (buổi 7 hoặc 8)**. Phải chốt đề tài trước ngày thi vấn đáp.
+## 2. Lý thuyết Chương 3: Phần cứng và Lưu trữ
+### 2.1. Thiết bị Phần cứng
+- **Vai trò:** Là nền tảng vật lý (móng nhà) để vận hành các phần mềm, mạng, quản trị và bảo mật. Hạ tầng phần cứng tốt giúp hệ thống chạy ổn định, an toàn và dễ dàng mở rộng.
+- **Chu kỳ đầu tư:** Thường dự toán để thiết bị có thể đáp ứng nhu cầu sử dụng và mở rộng trong khoảng **5 năm**.
+- **Máy chủ (Server):** 
+  - Là trung tâm cung cấp dịch vụ, tài nguyên, xử lý và lưu trữ dữ liệu.
+  - Cấu hình cần quan tâm: CPU, RAM, ổ cứng (SSD/HDD), nguồn dự phòng, cổng mạng, khả năng quản trị từ xa, khả năng mở rộng.
+  - Có thể tự đầu tư quản lý (với dữ liệu nhạy cảm) hoặc thuê cloud (AWS, Azure...) tùy theo nhu cầu và ngân sách.
+- **Máy trạm (Workstation/Client):** Phục vụ trực tiếp người dùng (văn phòng, đồ họa, phòng máy đào tạo...). Cấu hình phụ thuộc vào chức năng và nhóm người dùng.
+- **Thiết bị ngoại vi:** Hỗ trợ nhập/xuất, tương tác (máy in, mạng, máy quét...).
 
-## 3. Lý Thuyết Chương 3: Phần Cứng & Thiết Bị Lưu Trữ
-### Vai trò của Phần cứng
-- Là tập hợp các thiết bị vật lý tạo nên nền tảng vận hành cốt lõi cho toàn bộ hệ thống CNTT (xử lý, lưu trữ, kết nối mạng, duy trì hoạt động).
-- Trong dự án, phần cứng thường chiếm kinh phí đầu tư lớn nhất. Do đó, cần dự toán kỹ lưỡng cả chi phí mua sắm lẫn **chi phí vận hành**.
-- Thiết bị đầu tư cần đáp ứng nhu cầu tăng trưởng mở rộng của doanh nghiệp trong một chu kỳ dài hạn (thường tính toán cho chu kỳ **5 năm**).
+### 2.2. Thiết bị Lưu trữ
+- **Phân loại công nghệ lưu trữ phổ biến:**
+  - **DAS (Direct Attached Storage):** Lưu trữ gắn trực tiếp, phù hợp cá nhân/doanh nghiệp nhỏ.
+  - **NAS (Network Attached Storage):** Lưu trữ qua mạng, phù hợp chia sẻ file nội bộ cho doanh nghiệp vừa.
+  - **SAN (Storage Area Network):** Mạng lưu trữ chuyên dụng, tốc độ cao, dùng cho trung tâm dữ liệu hoặc doanh nghiệp lớn.
+- **Trung tâm dữ liệu (Data Center):** Nơi tập trung các thiết bị quan trọng (máy chủ, lưu trữ, mạng) với hệ thống làm mát và bảo mật cao.
 
-### Máy chủ (Server)
-- **Đặc điểm:** Hệ thống máy tính cấu hình cao, hoạt động 24/7, có tính dự phòng tốt. Đảm nhiệm việc chạy các ứng dụng chung, lưu trữ dữ liệu tập trung, quản lý cổng thông tin, hệ thống email, hoặc chạy các model AI.
-- **Tiêu chí lựa chọn:** Đánh giá kỹ về CPU, RAM, ổ cứng (SSD/HDD), khả năng dự phòng (nguồn điện, mạng) và ngân sách.
-- **Xu hướng:** Nhiều tác vụ nặng hiện nay được chuyển lên hệ thống máy chủ Cloud, tuy nhiên với các hệ thống đòi hỏi an toàn và bảo mật cao (như ngân hàng, dữ liệu quốc gia), doanh nghiệp vẫn tự đầu tư và quản lý hệ thống máy chủ riêng.
-
-### Máy trạm (Workstation / Client)
-- **Đặc điểm (trong mô hình LAN-Server):** Máy tính phục vụ trực tiếp cho người dùng cuối trong quá trình làm việc, học tập.
-- **Tiêu chí đầu tư:** Tùy thuộc vào nhóm đối tượng người dùng (ví dụ: máy tính cho đồ họa/kỹ thuật cần cấu hình mạnh, phòng máy thực hành tại trường học cần cấu hình đồng nhất để dễ quản lý, tối ưu chi phí).
-
-### Thiết bị lưu trữ
-- **Các mô hình lưu trữ phổ biến theo quy mô:**
-  - **DAS (Direct Attached Storage):** Lưu trữ gắn trực tiếp, chi phí thấp, phù hợp cho cá nhân hoặc doanh nghiệp nhỏ.
-  - **NAS (Network Attached Storage):** Lưu trữ qua mạng, dùng chung để chia sẻ file, phù hợp cho doanh nghiệp vừa và nhỏ.
-  - **SAN (Storage Area Network):** Mạng lưu trữ chuyên dụng, tốc độ truy xuất cực cao, nhiều lớp bảo mật và dự phòng, dùng cho các doanh nghiệp lớn (trung tâm dữ liệu, ngân hàng).
-
-### Trung tâm dữ liệu (Data Center)
-- Là nơi quy tụ và bảo vệ các thiết bị quan trọng nhất (máy chủ, hệ thống SAN, thiết bị mạng lõi) kèm theo các hệ thống phụ trợ (điều hòa nhiệt độ, điện dự phòng, an ninh vật lý) nhằm đảm bảo hoạt động liên tục, không gián đoạn.
+## 3. Hướng dẫn Đồ án (Bước 0 - Xác định phạm vi đề xuất)
+- **Mục tiêu:** Xác định rõ đề xuất đầu tư cái gì, cho đối tượng nào và trong bao lâu (ví dụ 5 năm). Tránh đầu tư thiết bị rời rạc mà phải hướng tới nâng cao năng lực hạ tầng.
+- **Yêu cầu khảo sát hiện trạng doanh nghiệp:** 
+  - Phải nắm được các thông tin cơ bản: Lịch sử, quy mô, cơ cấu tổ chức, quy trình hoạt động (không cần thanh tra chi tiết).
+  - Từ hiện trạng, chỉ ra được các **vấn đề đang tồn tại** (Ví dụ: dữ liệu không đồng bộ giữa các chi nhánh, tỷ lệ rớt tốt nghiệp cao do không cảnh báo sớm).
+- **Tính cấp thiết & Tính mới:**
+  - **Tính cấp thiết:** Giải quyết được các vấn đề/nhược điểm trong hiện trạng.
+  - **Tính mới:** Ứng dụng công nghệ mới (ví dụ AI, Data Warehouse, Data Lake) để tối ưu quy trình.
+- **Cấu trúc Thuyết minh:** Dựa trên các form chuẩn (như của ĐHQG), cần trình bày rõ ràng, logic để các bên (chuyên môn, tài chính) dễ dàng kiểm tra.
 
 ## 📝 Bài tập & Đồ án
-**1. Bài tập về nhà tuần này: "Xác định phạm vi đề xuất" (Bước 0 của Đồ án)**
-- **Yêu cầu nộp bài:**
-  - Thư ký/Đại diện nhóm tạo folder bài tập có tên **"Xác định phạm vi đề xuất"** và nộp link lên hệ thống eLearning trước thời hạn (trong ngày hôm nay).
-  - Lập bảng phân công công việc cụ thể cho từng thành viên trong nhóm dựa trên đề tài đã đăng ký.
-- **Nội dung thực hiện Bước 0:**
-  - **Khảo sát doanh nghiệp:** Tìm hiểu lịch sử, quy mô, cơ cấu tổ chức và các quy trình hoạt động cốt lõi của doanh nghiệp lựa chọn.
-  - **Xác định tính cấp thiết & tính mới:** Nêu rõ những khó khăn, vấn đề hiện tại của doanh nghiệp, từ đó làm cơ sở lập luận cho việc đầu tư hệ thống/ứng dụng công nghệ mới.
-  - **Xác định phạm vi đầu tư:** Trả lời ngắn gọn 3 ý chính: **Đầu tư lớp năng lực nào? Cho đối tượng/phòng ban nào? Định hướng sử dụng trong bao lâu (chu kỳ 5 năm)?**
+1. **Hoàn thành Bước 0 (Xác định phạm vi đề xuất):** 
+   - Xác định doanh nghiệp, bối cảnh, vấn đề, và đề xuất lớp năng lực cần đầu tư.
+   - Thống nhất các thông tin trên file đăng ký đồ án.
+2. **Nộp bài tập:** 
+   - Tạo thư mục bài tập "Xác định phạm vi đề xuất".
+   - Nộp đường link bài làm theo hạn (deadline) của ngày hôm nay.
+3. **Phân công nhóm:** Các nhóm (đặc biệt là nhóm 4, 8, 10, 11) nhanh chóng cập nhật đầy đủ bối cảnh doanh nghiệp và phân chia công việc cho thành viên.
 
-**2. Yêu cầu bổ sung cho các nhóm:**
-- **Nhóm 4 & Nhóm 11:** Phải chốt thông tin và cập nhật nội dung đề tài ngay trong tối nay.
-- **Nhóm 1, 7, 8, 10:** Yêu cầu nhanh chóng bổ sung phần "khảo sát bối cảnh doanh nghiệp và vấn đề hiện tại" vào file đăng ký đề tài để cô duyệt.
+## ⚠️ Yêu cầu & Nhắc nhở
+- **Chốt đề tài:** Khuyến cáo các nhóm trao đổi kỹ và **chốt đề tài/lớp năng lực** ngay từ đầu. Hạn chế thay đổi sau này vì sẽ phải làm lại toàn bộ hồ sơ từ đầu, nếu sai lệch sẽ không được hỗ trợ thêm.
+- **Trình bày tài liệu minh chứng:** Cần có link hoặc file báo cáo rõ ràng về hiện trạng doanh nghiệp.
+- **Không chọn cả 5 lớp năng lực:** Tránh làm quá rộng, hãy chọn nội dung sát với chuyên ngành CNTT (Phần mềm, Dữ liệu, Quản trị, Bảo mật).

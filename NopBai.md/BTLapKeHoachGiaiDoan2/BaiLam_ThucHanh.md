@@ -90,62 +90,41 @@ Quy trình vận hành có sự tham gia của AI đóng vai trò hệ thống h
 
 Kiến trúc được thiết kế trên nền tảng Cloud, chia thành 3 lớp rõ ràng:
 
-```
-┌─────────────────────────────────────────────────────────────────────────┐
-│                    TẦNG TRÌNH BÀY (Presentation Layer)                 │
-│                                                                         │
-│   ┌──────────────┐   ┌──────────────┐   ┌────────────────────────┐     │
-│   │  Web Dashboard│   │ Grafana      │   │ Webhook / Email Alert │     │
-│   │  (Dành cho QL)│   │ (Giám sát IT)│   │ (Cảnh báo tự động)   │     │
-│   └──────┬───────┘   └──────┬───────┘   └────────────┬───────────┘     │
-│          │                  │                        │                   │
-├──────────┴──────────────────┴────────────────────────┴───────────────────┤
-│                    TẦNG ỨNG DỤNG (Application Layer)                    │
-│                                                                         │
-│   ┌────────────────────────────────────────────────────────────────┐    │
-│   │              API Gateway (Xác thực JWT + Rate Limiting)        │    │
-│   └──────────────────────────┬─────────────────────────────────────┘    │
-│                              │                                          │
-│   ┌──────────────┐   ┌──────┴───────┐   ┌──────────────────────┐       │
-│   │ Forecast     │   │ Alert        │   │ Pipeline             │       │
-│   │ Service      │   │ Service      │   │ Orchestrator         │       │
-│   │ (FastAPI)    │   │ (FastAPI)    │   │ (Apache Airflow)     │       │
-│   └──────┬───────┘   └──────┬───────┘   └──────────┬───────────┘       │
-│          │                  │                       │                    │
-├──────────┴──────────────────┴───────────────────────┴────────────────────┤
-│                    TẦNG DỮ LIỆU (Data Layer)                            │
-│                                                                         │
-│   ┌──────────────┐   ┌──────────────┐   ┌──────────────────────┐       │
-│   │ Data         │   │ Model        │   │ Prometheus +         │       │
-│   │ Warehouse    │   │ Registry     │   │ Loki (Metrics/Logs)  │       │
-│   │ (PostgreSQL) │   │ (MLflow)     │   │                      │       │
-│   └──────────────┘   └──────────────┘   └──────────────────────┘       │
-│                                                                         │
-│   ┌────────────────────────────────────────────────────────────────┐    │
-│   │          Object Storage (S3) — Raw Data + Model Artifacts      │    │
-│   └────────────────────────────────────────────────────────────────┘    │
-└─────────────────────────────────────────────────────────────────────────┘
-```
+1. **Tầng Trình bày (Presentation Layer):**
+   - **Web Dashboard:** Giao diện hiển thị dành cho Quản lý chi nhánh và Quản lý trung tâm để xem kết quả dự báo.
+   - **Grafana:** Bảng điều khiển dành cho bộ phận IT (Kỹ sư dữ liệu, SRE, DevOps) để giám sát các chỉ số hoạt động của hệ thống (Metrics/Logs).
+   - **Webhook / Email Alert:** Kênh phân phối thông báo tự động (cảnh báo giờ cao điểm, cảnh báo lỗi hệ thống) đến người dùng cuối.
+
+2. **Tầng Ứng dụng (Application Layer):**
+   - **API Gateway:** Cửa ngõ tiếp nhận toàn bộ các yêu cầu từ Tầng Trình bày. Đảm nhiệm chức năng xác thực người dùng (Xác thực JWT) và kiểm soát lưu lượng (Rate Limiting).
+   - **Forecast Service (FastAPI):** Dịch vụ API xử lý và trả về kết quả dự báo lưu lượng khách hàng.
+   - **Alert Service (FastAPI):** Dịch vụ API phụ trách xử lý logic và kích hoạt các cảnh báo dựa trên ngưỡng thiết lập.
+   - **Pipeline Orchestrator (Apache Airflow):** Hệ thống điều phối luồng dữ liệu (Data Pipeline), tự động hóa các tác vụ ETL và huấn luyện mô hình.
+
+3. **Tầng Dữ liệu (Data Layer):**
+   - **Data Warehouse (PostgreSQL):** Kho dữ liệu có cấu trúc, lưu trữ dữ liệu sau khi đã được làm sạch và dữ liệu dự báo.
+   - **Model Registry (MLflow):** Nơi lưu trữ, phiên bản hóa và quản lý các mô hình học máy (AI Models).
+   - **Prometheus + Loki:** Các công cụ thu thập và lưu trữ thông số hoạt động (Metrics) và nhật ký hệ thống (Logs) phục vụ cho Grafana.
+   - **Object Storage (S3):** Nơi lưu trữ khối (Object Storage) dành cho dữ liệu thô (Raw Data) trích xuất từ các POS và các tạo tác mô hình (Model Artifacts).
 
 ### 6.3. Luồng xử lý Data Pipeline
 
-```
-POS DB (34 chi nhánh)
-    │
-    │ [01:00 AM] Trích xuất batch qua kết nối TLS
-    ▼
-Airflow DAG: Extract  ──► Object Storage (S3) — Raw Zone
-    │
-    ▼
-Airflow DAG: Transform (Làm sạch, chuẩn hóa, loại trùng)
-    │
-    ▼
-Data Warehouse (PostgreSQL) — Clean Zone
-    │
-    ├──► Airflow DAG: Train (Tái huấn luyện mô hình hàng tháng) ──► MLflow Registry
-    │
-    └──► Airflow DAG: Predict (Chạy dự báo batch hàng đêm) ──► Bảng Kết Quả Dự Báo
-```
+Luồng dữ liệu trong hệ thống được vận hành một cách tự động thông qua các DAG (Directed Acyclic Graph) trên Apache Airflow theo các bước sau:
+
+1. **Trích xuất dữ liệu (Extract):**
+   - Hàng ngày vào lúc 01:00 AM, Airflow thực thi tác vụ trích xuất dữ liệu theo lô (batch) từ hệ thống Cơ sở dữ liệu POS của 34 chi nhánh.
+   - Việc kết nối và truyền tải dữ liệu được bảo mật qua giao thức TLS.
+   - Dữ liệu thô thu thập được sẽ được lưu trữ tại phân vùng Raw Zone trên Object Storage (S3).
+
+2. **Chuyển đổi dữ liệu (Transform):**
+   - Ngay sau quá trình Extract, Airflow thực thi các tiến trình làm sạch dữ liệu.
+   - Dữ liệu thô được chuẩn hóa, loại bỏ các bản ghi trùng lặp hoặc không hợp lệ.
+   - Kết quả dữ liệu sạch (Clean Data) được nạp vào phân vùng Clean Zone tại Data Warehouse (PostgreSQL).
+
+3. **Huấn luyện và Dự báo (Train & Predict):**
+   - Từ dữ liệu sạch tại Data Warehouse, hệ thống phân nhánh thành hai tiến trình chính:
+     - **Tái huấn luyện (Train):** Airflow thực thi DAG tái huấn luyện mô hình theo chu kỳ (ví dụ: hàng tháng). Mô hình huấn luyện xong được cập nhật và lưu trữ phiên bản tại MLflow Registry.
+     - **Dự báo (Predict):** Hàng đêm, Airflow thực thi DAG dự báo bằng cách sử dụng mô hình AI mới nhất để chạy dự báo hàng loạt (batch). Kết quả dự báo được ghi nhận trở lại Data Warehouse (bảng Kết Quả Dự Báo), sẵn sàng cho Forecast Service truy xuất.
 
 ### 6.4. Tích hợp hệ thống
 
@@ -265,4 +244,6 @@ Bảng kiểm chứng chứng minh tổng ngân sách CAPEX xin cấp (663 tri�
 [9] Google Cloud (n.d.), *Kubernetes Engine Documentation*, truy cập tại: https://cloud.google.com/kubernetes-engine/docs  
 [10] Apache Software Foundation (n.d.), *Apache Airflow Documentation*, truy cập tại: https://airflow.apache.org/docs/  
 [11] MLflow (n.d.), *MLflow Documentation — Model Registry*, truy cập tại: https://mlflow.org/docs/latest/model-registry.html  
-[12] PMI (2021), *A Guide to the Project Management Body of Knowledge (PMBOK® Guide)*, 7th Edition, Project Management Institute.
+[12] PMI (2021), *A Guide to the Project Management Body of Knowledge (PMBOK® Guide)*, 7th Edition, Project Management Institute.  
+[13] Hyndman, R.J., & Athanasopoulos, G. (2021), *Forecasting: Principles and Practice*, 3rd Edition, OTexts: Melbourne, Australia. (Tài liệu tham khảo cơ sở toán học cho các độ đo lỗi dự báo chuỗi thời gian như MAPE, MAE).  
+[14] Powers, D. M. W. (2011), *Evaluation: From Precision, Recall and F-Measure to ROC, Informedness, Markedness & Correlation*, Journal of Machine Learning Technologies, 2(1), 37-63. (Tài liệu tham khảo cho các độ đo đánh giá mô hình học máy như Precision).

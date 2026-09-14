@@ -1,42 +1,37 @@
-# Buổi 4 - Hướng dẫn và Sửa bài báo cáo Đồ án & Thực hành
+# Ghi chú bài giảng Buổi 4: Sửa bài tập Xác định phạm vi đề xuất (Đồ án & Thực hành)
 
-## 📝 Bài tập & Đồ án
-### 1. Đồ án môn học (Dự án đầu tư cơ sở hạ tầng CNTT)
-- **Sản phẩm yêu cầu:** 
-  - Một file báo cáo đề xuất dự án.
-  - Khi báo cáo trên lớp, trình bày dạng **One-pager (1 trang)** xác định rõ phạm vi đề xuất dự án.
-  - Kèm theo danh sách tài liệu tham khảo.
-- **Yêu cầu khi chọn phạm vi và lớp năng lực:**
-  - Nêu ngắn gọn ngữ cảnh, hiện trạng công ty và vấn đề cần giải quyết.
-  - Chọn đầu tư từ **2 đến 3 lớp năng lực** để giải quyết đúng một vấn đề cụ thể, tránh việc chọn cả 5 lớp năng lực một cách dàn trải, lan man.
-  - Có thể giả lập một số thành phần (như phần cứng, mạng) đã có sẵn hoặc được kế thừa, để tập trung đầu tư phát triển mới các lớp năng lực khác (như nền tảng tích hợp, dữ liệu, bảo mật).
-  - **Tính liền mạch:** Việc đầu tư các lớp năng lực phải có sự liên kết chặt chẽ với nhau, cùng hướng tới giải quyết một vấn đề lớn của doanh nghiệp. Tránh tình trạng mỗi lớp năng lực lại giải quyết một vấn đề rời rạc.
-  - Trong thuyết minh, cần liệt kê các "công nghệ tiềm năng dự kiến triển khai" chứ không khẳng định tuyệt đối (vì chưa thực nghiệm). Nên chuẩn bị sẵn các công nghệ thay thế để phòng rủi ro.
+## 1. Nội dung bài giảng & Các điểm lưu ý quan trọng (Sửa bài các nhóm)
 
-### 2. Bài thực hành (Phát triển phần mềm ứng dụng công nghệ mới)
-- **Yêu cầu:** Xây dựng thuyết minh hệ thống phần mềm ứng dụng một **công nghệ mới** (ví dụ: AI, Machine Learning, Deep Learning, Khai thác dữ liệu lớn, Blockchain, Web3...) để giải quyết một quy trình cụ thể.
-- **Tính liên kết:** Khuyến khích bài thực hành bám sát và nằm trong phạm vi các lớp năng lực đã được đầu tư ở phần đồ án để tạo sự xuyên suốt (ví dụ: đầu tư hạ tầng dữ liệu ở Đồ án, sau đó làm phần mềm dự báo bằng AI ở bài Thực hành).
-- **Cách thức thực hiện:**
-  - Đi sâu tìm hiểu một công nghệ lõi mới, làm chủ công nghệ, tìm hiểu kỹ thuật và quy trình để **tự triển khai** (ví dụ tự build model AI/Chatbot riêng cho lĩnh vực của mình), thay vì chỉ đơn thuần sử dụng như một công cụ hay gọi các API có sẵn.
-  - **Giới hạn phạm vi:** Chỉ chọn 1 quy trình, 1 nhóm người dùng cụ thể để giải quyết 1-2 vấn đề. Không nên quá tham lam giải quyết toàn bộ hệ thống.
-  - Cần phân biệt rõ các khái niệm (ví dụ: Phân biệt giữa "Xuất báo cáo BI/Dashboard thông thường" và "Dự báo lưu lượng/tồn kho ứng dụng AI").
+Trong buổi học, cô Nguyễn Thị Anh Thư tiến hành sửa bài tập "Xác định phạm vi đề xuất" cho các nhóm (Nhóm 1, 2, 3, 4, 5, 6, 8, 10, 11). Dưới đây là các đúc kết và kiến thức quan trọng được cô nhấn mạnh nhằm giúp sinh viên hiểu rõ yêu cầu của Đồ án môn học và Bài thực hành.
 
----
+### A. Đối với Đồ án môn học (Đầu tư Cơ sở hạ tầng)
+- **Sản phẩm đầu ra:** Báo cáo One-pager (1 trang) tóm tắt phạm vi dự án và Danh sách tài liệu tham khảo (chọn lọc, có đối chứng, ưu tiên nguồn chính thống của doanh nghiệp).
+- **Phạm vi đầu tư:**
+  - Không trình bày quá dài dòng về lịch sử công ty, chỉ cần nêu bối cảnh/hiện trạng dẫn đến nhu cầu cần đầu tư.
+  - Nên chọn giới hạn khoảng **2 đến 3 lớp năng lực (Layer)** để đầu tư thay vì chọn tất cả. 
+  - Trong mỗi lớp năng lực, cần xác định rõ thành phần nào công ty đã có sẵn (được kế thừa) và thành phần nào sẽ được đầu tư mới hoặc nâng cấp toàn diện (dựa trên Bảng ánh xạ ở Chương 2).
+- **Tính liền mạch:** Dự án đầu tư cần giải quyết một vấn đề lớn, cụ thể của doanh nghiệp. Các lớp năng lực được chọn phải có mối liên kết với nhau để cùng giải quyết vấn đề đó, tránh trình bày rời rạc mỗi lớp giải quyết một vấn đề khác nhau.
 
-## 💡 Yêu cầu & Nhắc nhở qua phần nhận xét các nhóm
-Trong quá trình sửa bài cho các nhóm (Nhóm 1, 3, 4, 5, 6, 7, 8, 9), cô nhấn mạnh các lỗi sai và lưu ý sau:
+### B. Đối với Bài thực hành (Phát triển hệ thống phần mềm ứng dụng công nghệ mới)
+- **Sản phẩm đầu ra:** Bản thuyết minh đề xuất xây dựng hệ thống phần mềm ứng dụng công nghệ mới (không yêu cầu sinh viên phải lập trình/triển khai thực tế trong khuôn khổ môn học, mà mang tính chất viết thuyết minh xin cấp kinh phí dự án như của Bộ Khoa học & Công nghệ).
+- **Phạm vi bài toán:**
+  - Nên chọn ý tưởng bám sát vào phạm vi hạ tầng của Đồ án môn học để đảm bảo tính nhất quán.
+  - Chọn **1 quy trình cụ thể** (VD: quản lý kho, chăm sóc khách hàng, thanh toán) phục vụ cho một đối tượng người dùng (actor) nhất định.
+- **Ứng dụng "Công nghệ mới" (Công nghệ lõi):**
+  - Khuyến khích tìm hiểu các **Công nghệ lõi** hiện đang nổi bật và được ưu tiên phát triển (VD: Trí tuệ nhân tạo - AI, Machine Learning, Deep Learning, Dữ liệu lớn - Big Data, Điện toán lượng tử, Điện toán biên, Blockchain, v.v.).
+  - **Phân biệt công nghệ và công cụ:** Không nhầm lẫn công nghệ lõi với các công cụ/kỹ thuật phần mềm (như lập trình Web, API Gateway, Kubernetes, v.v.).
+  - **Hiểu đúng bản chất AI:** Khi áp dụng AI, cần xác định đúng bài toán. Ví dụ: LLM chuyên xử lý ngôn ngữ tự nhiên (NLP), không dùng LLM để xử lý ảnh camera (Computer Vision) hay chuỗi thời gian (Time Series). Cần phân biệt bài toán "dự báo" (ứng dụng AI/Machine Learning để tính toán xu hướng tương lai) và "báo cáo" (trích xuất và trực quan hóa dữ liệu có sẵn thông qua BI/Dashboard).
 
-1. **Về cách trình bày:**
-   - Cần đi thẳng vào trọng tâm: Trình bày ngay phạm vi, các lớp năng lực dự kiến đầu tư, hạng mục, hiện trạng. **Bỏ qua** các thông tin dài dòng về lịch sử phát triển hay quy mô tổ chức của công ty vì không cần thiết.
-   - Sắp xếp thứ tự trình bày logic: Bắt đầu từ Đồ án (Ngữ cảnh -> Lớp năng lực đầu tư) -> Tài liệu tham khảo -> Bài thực hành (Phần mềm ứng dụng công nghệ mới trên hạ tầng đó).
+## 📝 2. Bài tập & Đồ án
 
-2. **Về xác định bài toán & Công nghệ:**
-   - **Tránh chọn bài toán quá rộng:** Ví dụ như xử lý dữ liệu video/camera phát hiện trộm là một bài toán rất lớn và phức tạp, cần xác định rõ chuẩn đầu vào, hành vi bất thường là gì.
-   - **Sử dụng đúng công nghệ:** Không phải bài toán nào cũng dùng LLM. LLM chuyên về NLP (xử lý ngôn ngữ tự nhiên); nếu xử lý dữ liệu dạng Time-series thì nên đi theo nhánh Transformer chuyên biệt phù hợp.
-   - **Phân biệt bài toán Phát hiện (Detect) và Giải thích:** Bài toán phát hiện bất thường (phân lớp) dễ khả thi hơn. Bài toán giải thích lý do vì sao xảy ra bất thường/gian lận là cực kỳ khó và liên quan đến yếu tố con người.
-   - Nếu áp dụng công nghệ mới cho hệ thống như Chatbot CSKH, hãy giới hạn nó trả lời chuyên sâu về lĩnh vực cụ thể (ví dụ tài liệu pháp luật hoặc dịch vụ của đúng công ty đó) thay vì cố gắng làm đa năng đa nhiệm.
-   - Việc chỉ kiểm tra tín hiệu có Internet hay không là bài toán IoT cơ bản (cảm biến nhận tín hiệu), không phải là bài toán Detect gian lận/tắt mạng bất thường phức tạp bằng AI.
+- **Hoàn thiện bài tập "Xác định phạm vi đề xuất":** 
+  - Các nhóm cần thảo luận lại nội dung dựa trên những góp ý sửa bài của cô trên lớp.
+  - Điều chỉnh lại số lượng lớp năng lực đầu tư, làm rõ sự liên kết giữa các lớp, và định hình cụ thể ý tưởng cho bài thực hành (1 quy trình + 1 công nghệ mới).
+- **Cách thức nộp bài:**
+  - Cập nhật tài liệu (File báo cáo One-pager và Danh sách tài liệu tham khảo) vào thư mục chung của lớp trên Google Drive.
+  - Những nhóm đã được cô sửa và highlight thì cập nhật lại bản mới nhất để cô kiểm tra vào các buổi báo cáo tiến độ tiếp theo.
 
-3. **Lưu ý cập nhật bài làm (Trên Google Drive):**
-   - Các nhóm làm sai yêu cầu phải họp nhóm thảo luận và chọn lại phạm vi, bài toán.
-   - Khi cập nhật lại file báo cáo trên Drive, nếu nhóm có thay đổi/làm mới thì cần tạo file mới hoặc báo để cô biết. Đối với những file cô đã highlight (đánh dấu) tức là cô đã xem qua, nếu nhóm sửa đè lên (edit) mà không báo thì cô sẽ không biết để kiểm tra lại.
+## ⚠️ 3. Yêu cầu & Nhắc nhở
+- **Trình bày ngắn gọn, đúng trọng tâm:** Khi báo cáo, đi thẳng vào các lớp năng lực dự kiến đầu tư và ý tưởng công nghệ, không mất quá nhiều thời gian vào phần giới thiệu lịch sử doanh nghiệp.
+- **Tránh ôm đồm, lan man:** Đừng chọn một phạm vi quá rộng hoặc quá nhiều công nghệ mà bản thân nhóm chưa hiểu rõ. Các dự án ngắn hạn cần sự chuyên biệt, đi sâu vào một vấn đề cụ thể để có thể phân tích chi tiết về mặt kỹ thuật và cách thức triển khai.
+- **Tính thực tiễn:** Ngay cả khi đây là bài giả lập, các giả định đưa ra (về hiện trạng doanh nghiệp, thành phần công nghệ) vẫn phải hợp lý và bám sát thực tế thị trường.

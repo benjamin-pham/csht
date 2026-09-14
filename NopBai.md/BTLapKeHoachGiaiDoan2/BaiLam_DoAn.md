@@ -251,13 +251,69 @@ $$\text{TCO}_{3 \text{ năm}} = \text{CAPEX} + \text{OPEX}_{3 \text{ năm}} + \t
 
 Kế hoạch triển khai chia 5 pha, tổng thời gian **16 tuần (~4 tháng)**, giảm thiểu rủi ro thông qua triển khai có kiểm soát và Pilot trước khi rollout toàn bộ.
 
-| Pha | Tên pha | Tuần | Thời lượng | Deliverables (Sản phẩm bàn giao) | Tiêu chí hoàn thành | Phụ thuộc |
-|:---:|:---|:---:|:---:|:---|:---|:---:|
-| **1** | **Foundation** — Mạng, Bảo mật nền, Monitoring | T1–T3 | 3 tuần | • VPN Site-to-Site HQ ↔ Cloud hoạt động • On-Prem Server HQ: Keycloak (SSO/IAM) + PII DB cài đặt & hardening • Firewall NGFW cấu hình rules • Prometheus + Grafana + Loki cài đặt trên Cloud • Centralized Logging (≥ 90 ngày) • CMDB khởi tạo | VPN ping < 50ms; SSO login thành công cho 4 vai trò; Dashboard Monitoring hiển thị metrics; Firewall rules audit pass | — |
-| **2** | **Core** — Compute, Storage, HA, Backup/DR | T3–T6 | 4 tuần | • K8s Cluster Production (6 nodes, multi-zone) • Managed PostgreSQL HA + Managed Kafka HA • Object Storage (S3) • Backup immutable hàng ngày (retention 30 ngày) • PITR cho PostgreSQL (retention 7 ngày) • Edge Golden Image đóng gói (K3s + Kafka + LocalDB) | K8s cluster: 2 zone failover ≤ 60s; Kafka replication factor = 3; Backup test restore thành công; Edge Golden Image boot thành công trên 1 máy test | Pha 1 |
-| **3** | **Security Uplift** — Tích hợp IAM, Mã hoá, CDC | T6–T9 | 4 tuần | • Tích hợp SSO (Keycloak) vào 8 hệ thống POS/Gym/Bida/Kho • MFA cho tài khoản admin • Mã hoá AES-256 cho PII DB at-rest • CDC Streaming (Kafka Connect) từ 34 POS → Cloud • Ẩn danh hoá PII trước khi ghi Data Lakehouse • API Gateway cấu hình (rate limiting, JWT auth) • Data Pipeline Airflow DAGs (ETL) | 100% app xác thực qua SSO; 100% trường PII mã hoá; CDC streaming 5.000 events/s stress test pass; API Gateway load test 2.000 concurrent pass; Pipeline ETL chạy end-to-end trên staging | Pha 2 |
-| **4** | **Migration & AI** — Migrate dữ liệu, Triển khai AI, Pilot | T9–T13 | 5 tuần | • Migrate dữ liệu lịch sử 12 tháng (8 hệ thống → Data Lakehouse) • Huấn luyện mô hình AI dự báo lưu lượng • AI Inference Service (FastAPI) trên K8s • Triển khai 34 Edge Cluster (deploy Golden Image) • **Pilot 5 chi nhánh** (2 tuần vận hành thử) • Load Test toàn hệ thống • Pentest & Vulnerability Scan • UAT với Admin chi nhánh | Dữ liệu migrate: 100% toàn vẹn (row count match); AI MAPE < 15% trên tập test; Pilot 5 CN: uptime ≥ 99.99%, offline test pass (4h mất mạng); Pentest: 0 Critical/High; UAT sign-off | Pha 3 |
-| **5** | **Optimize & Rollout** — Rollout toàn bộ, SOP, Chuyển giao | T13–T16 | 4 tuần | • Rollout 29 chi nhánh còn lại (đợt 10-10-9 CN) • Runbook/SOP vận hành (≥ 10 quy trình) • DR Drill lần 1 • Đào tạo IT team (3 buổi) + Admin CN (2 buổi) • Bàn giao CMDB, tài liệu kiến trúc, tài khoản • Capacity Planning báo cáo quý 1 • Fine-tune alerting thresholds | Toàn bộ 34 CN hoạt động ổn định; DR Drill: RTO ≤ 4h; Đào tạo hoàn tất, biên bản bàn giao ký; CMDB liệt kê 100% tài sản; SOP thử nghiệm 3 kịch bản — pass | Pha 4 |
+#### Pha 1: Foundation — Mạng, Bảo mật nền, Monitoring
+- **Thời gian:** T1–T3 (3 tuần)
+- **Phụ thuộc:** —
+- **Deliverables (Sản phẩm bàn giao):**
+  - VPN Site-to-Site HQ ↔ Cloud hoạt động
+  - On-Prem Server HQ: Keycloak (SSO/IAM) + PII DB cài đặt & hardening
+  - Firewall NGFW cấu hình rules
+  - Prometheus + Grafana + Loki cài đặt trên Cloud
+  - Centralized Logging (≥ 90 ngày)
+  - CMDB khởi tạo
+- **Tiêu chí hoàn thành:** VPN ping < 50ms; SSO login thành công cho 4 vai trò; Dashboard Monitoring hiển thị metrics; Firewall rules audit pass
+
+#### Pha 2: Core — Compute, Storage, HA, Backup/DR
+- **Thời gian:** T3–T6 (4 tuần)
+- **Phụ thuộc:** Pha 1
+- **Deliverables (Sản phẩm bàn giao):**
+  - K8s Cluster Production (6 nodes, multi-zone)
+  - Managed PostgreSQL HA + Managed Kafka HA
+  - Object Storage (S3)
+  - Backup immutable hàng ngày (retention 30 ngày)
+  - PITR cho PostgreSQL (retention 7 ngày)
+  - Edge Golden Image đóng gói (K3s + Kafka + LocalDB)
+- **Tiêu chí hoàn thành:** K8s cluster: 2 zone failover ≤ 60s; Kafka replication factor = 3; Backup test restore thành công; Edge Golden Image boot thành công trên 1 máy test
+
+#### Pha 3: Security Uplift — Tích hợp IAM, Mã hoá, CDC
+- **Thời gian:** T6–T9 (4 tuần)
+- **Phụ thuộc:** Pha 2
+- **Deliverables (Sản phẩm bàn giao):**
+  - Tích hợp SSO (Keycloak) vào 8 hệ thống POS/Gym/Bida/Kho
+  - MFA cho tài khoản admin
+  - Mã hoá AES-256 cho PII DB at-rest
+  - CDC Streaming (Kafka Connect) từ 34 POS → Cloud
+  - Ẩn danh hoá PII trước khi ghi Data Lakehouse
+  - API Gateway cấu hình (rate limiting, JWT auth)
+  - Data Pipeline Airflow DAGs (ETL)
+- **Tiêu chí hoàn thành:** 100% app xác thực qua SSO; 100% trường PII mã hoá; CDC streaming 5.000 events/s stress test pass; API Gateway load test 2.000 concurrent pass; Pipeline ETL chạy end-to-end trên staging
+
+#### Pha 4: Migration & AI — Migrate dữ liệu, Triển khai AI, Pilot
+- **Thời gian:** T9–T13 (5 tuần)
+- **Phụ thuộc:** Pha 3
+- **Deliverables (Sản phẩm bàn giao):**
+  - Migrate dữ liệu lịch sử 12 tháng (8 hệ thống → Data Lakehouse)
+  - Huấn luyện mô hình AI dự báo lưu lượng
+  - AI Inference Service (FastAPI) trên K8s
+  - Triển khai 34 Edge Cluster (deploy Golden Image)
+  - **Pilot 5 chi nhánh** (2 tuần vận hành thử)
+  - Load Test toàn hệ thống
+  - Pentest & Vulnerability Scan
+  - UAT với Admin chi nhánh
+- **Tiêu chí hoàn thành:** Dữ liệu migrate: 100% toàn vẹn (row count match); AI MAPE < 15% trên tập test; Pilot 5 CN: uptime ≥ 99.99%, offline test pass (4h mất mạng); Pentest: 0 Critical/High; UAT sign-off
+
+#### Pha 5: Optimize & Rollout — Rollout toàn bộ, SOP, Chuyển giao
+- **Thời gian:** T13–T16 (4 tuần)
+- **Phụ thuộc:** Pha 4
+- **Deliverables (Sản phẩm bàn giao):**
+  - Rollout 29 chi nhánh còn lại (đợt 10-10-9 CN)
+  - Runbook/SOP vận hành (≥ 10 quy trình)
+  - DR Drill lần 1
+  - Đào tạo IT team (3 buổi) + Admin CN (2 buổi)
+  - Bàn giao CMDB, tài liệu kiến trúc, tài khoản
+  - Capacity Planning báo cáo quý 1
+  - Fine-tune alerting thresholds
+- **Tiêu chí hoàn thành:** Toàn bộ 34 CN hoạt động ổn định; DR Drill: RTO ≤ 4h; Đào tạo hoàn tất, biên bản bàn giao ký; CMDB liệt kê 100% tài sản; SOP thử nghiệm 3 kịch bản — pass
 
 ### 8.2. Mốc nghiệm thu (Milestones)
 

@@ -1,47 +1,38 @@
-# Buổi 6: Hướng dẫn thuyết minh Đồ án & Thực hành - Góp ý các nhóm
+# Buổi 6: Báo Cáo Thực Hành và Đồ Án
 
-Tài liệu này tổng hợp các nhận xét, góp ý và hướng dẫn của cô Nguyễn Thị Anh Thư trong quá trình duyệt đề cương (Thuyết minh đề tài) của các nhóm cho môn học Cơ sở hạ tầng CNTT.
+## 1. Nội Dung Bài Giảng & Nhận Xét Chuyên Môn
 
-## 1. Nội dung bài giảng & Hướng dẫn kỹ thuật
+### 1.1. Cách Thức Viết Thuyết Minh và Báo Cáo
+- **Viết súc tích, đi vào trọng tâm:** Báo cáo cần đi thẳng vào bài toán công nghệ, chức năng hệ thống hoặc nhóm người dùng mục tiêu. Tránh viết lan man, dài dòng. Không lạm dụng công cụ AI để sinh ra các đoạn văn chung chung không có điểm nhấn.
+- **Tính thuyết phục của thuyết minh:** Khách hàng hoặc nhà đầu tư thường chỉ đọc thuyết minh để ra quyết định mà không có cơ hội nghe giải thích trực tiếp. Do đó, tài liệu phải thể hiện rõ năng lực chuyên môn, giải quyết đúng "nỗi đau" (problem) của doanh nghiệp và làm nổi bật giá trị của dự án.
+- **Khi trình bày (báo cáo):** Chỉ cần tóm tắt các ý chính của từng bước trong thời gian giới hạn (15 phút). Không trình bày lại toàn bộ báo cáo văn bản.
 
-### 1.1. Nguyên tắc viết Thuyết minh đề tài (Project Proposal)
-- **Đi thẳng vào trọng tâm:** Đừng viết dài dòng, lan man hay lặp lại các lý thuyết chung chung (đặc biệt là các đoạn văn do AI sinh ra). Người đọc (khách hàng, hội đồng) cần thấy ngay:
-  1. Vấn đề hiện tại (ngữ cảnh) là gì?
-  2. Kỹ thuật/Công nghệ (giải pháp) đề xuất là gì?
-  3. Giá trị đạt được (mục tiêu) là gì?
-- **Khẳng định năng lực kỹ thuật:** Thuyết minh là để chứng minh nhóm IT có khả năng thực thi giải pháp công nghệ, chứ không phải đi diễn giải lại quy trình kinh doanh của khách hàng.
-- **Tên đề tài:** Phải thể hiện rõ công nghệ áp dụng và bài toán kỹ thuật (Ví dụ: Đừng ghi chung chung là "Tổng hợp đa nguồn", hãy ghi cụ thể kỹ thuật sẽ dùng hoặc loại dữ liệu sẽ xử lý).
+### 1.2. Xác Định Phạm Vi và Vấn Đề (Thực hành & Đồ án)
+- **Tập trung vào hệ thống phần mềm:** Đối với bài thực hành, sinh viên đóng vai trò là đội ngũ IT xây dựng phần mềm quản lý, chứ không phải đi thiết kế lại quy trình vận hành của doanh nghiệp. Quy trình kinh doanh chỉ đóng vai trò là "ngữ cảnh ứng dụng".
+- **Làm nổi bật giá trị giải pháp (Thông tin vàng):** Ví dụ, nếu dự báo được lưu lượng khách hàng, giải pháp không chỉ giúp quản lý nhân sự mà còn hỗ trợ chiến lược marketing và quản lý kho. Tối đa hóa giá trị ứng dụng sẽ tăng tính cấp thiết và thuyết phục cho đề tài.
+- **Giới hạn phạm vi hợp lý:** 
+  - Tránh ôm đồm quá nhiều bài toán trong một dự án (ví dụ: vừa phân tích dữ liệu, xử lý hình ảnh, vừa cảnh báo, tự động điều phối).
+  - Tránh các bài toán mang tính trách nhiệm pháp lý cao (ví dụ: AI đề xuất phác đồ điều trị thay vì chỉ dừng ở gợi ý chẩn đoán y khoa). Quyết định cuối cùng vẫn luôn thuộc về con người, AI chỉ đóng vai trò hỗ trợ/gợi ý.
+  - Tên đề tài phải thể hiện rõ công nghệ áp dụng và bài toán cụ thể đang giải quyết. Tránh đặt tên quá rộng hoặc chung chung.
 
-### 1.2. Xác định Mục tiêu và KPI / Độ đo (Metrics)
-- **Đo lường sản phẩm phần mềm, không đo quy trình doanh nghiệp:** Các kỹ sư IT xây dựng phần mềm để hỗ trợ quy trình, nên KPI phải đánh giá chất lượng của chính phần mềm/hệ thống đó (VD: Thời gian phản hồi API, tỷ lệ downtime, độ chính xác của Model AI - Precision, Recall, F1-score...). KHÔNG sử dụng KPI của phòng ban kinh doanh (VD: Thời gian nhân viên xử lý hồ sơ, doanh thu tăng thêm...) vì IT không thể cam kết và kiểm soát năng suất của nhân sự.
-- **Sử dụng chuẩn quốc tế:** Các độ đo (Metrics) phải là các công thức toán học chuẩn, đã được khoa học hoặc tổ chức quốc tế công nhận. 
-- **Phải có tài liệu tham khảo (Citation):** Khi sử dụng một KPI/độ đo, bắt buộc phải trích dẫn (cite) nguồn tài liệu tham khảo gốc và giải thích rõ công thức tính toán.
-- **Tính thống nhất:** Mục tiêu, Base-line (hiện trạng), và KPI to-be phải thống nhất xuyên suốt từ trên xuống dưới.
+### 1.3. Mục Tiêu và KPI (Độ đo)
+- **KPI phải bám sát hệ thống phần mềm:** KPI dùng để đo lường chất lượng hệ thống/mô hình phần mềm trước khi bàn giao, chứ không dùng để đo lường hiệu quả quy trình kinh doanh (ví dụ: không dùng "thời gian chờ của khách hàng" làm KPI cho phần mềm nhận diện khuôn mặt).
+- **Sử dụng độ đo chuẩn mực:** Các độ đo (như Precision, Recall, F1-score, độ trễ, v.v.) phải là các công thức tính toán chuẩn đã được công nhận trong ngành kỹ thuật.
+- **Trích dẫn nguồn (Citation):** Bắt buộc phải có tài liệu tham khảo rõ ràng cho các độ đo và KPI được sử dụng. Tuyệt đối không dùng các độ đo miêu tả chung chung bằng lời do AI sinh ra mà không có cơ sở khoa học.
 
-### 1.3. Phương pháp lập Bảng so sánh & Chọn phương án Kiến trúc (VD: Cloud vs On-premise vs Hybrid)
-- **Không dùng AI liệt kê ưu/nhược điểm chung chung:** Các bảng so sánh toàn chữ, liệt kê chung chung các điểm mạnh/yếu không mang lại giá trị ra quyết định.
-- **So sánh dựa trên Tiêu chí Mục tiêu:** Hãy đặt ra các tiêu chí (criteria) bắt buộc dựa trên vấn đề của doanh nghiệp (VD: Khả năng mở rộng nhanh, độ trễ thấp, tuân thủ bảo mật dữ liệu nhạy cảm).
-- **Trực quan hóa:** Sử dụng các bảng có dấu tick (v), biểu đồ cột hoặc ký hiệu trực quan sao cho khách hàng nhìn vào là thấy ngay phương án nào đáp ứng đầy đủ các tiêu chí nhất. LUÔN phải có diễn giải lý do bên dưới bảng.
+### 1.4. Lựa Chọn Phương Án Kiến Trúc (Bước 4 Đồ án)
+- **Bảng so sánh phương án kiến trúc (On-premise, Cloud, Hybrid):**
+  - Không liệt kê ưu nhược điểm bằng các đoạn văn dài chung chung.
+  - Phải lập bảng đánh giá chéo dựa trên các **tiêu chí mục tiêu** đã đặt ra từ đầu.
+  - Bảng so sánh phải trực quan (có thể dùng dấu tick, ký hiệu), giúp người đọc nhìn vào thấy ngay phương án nào đáp ứng tối ưu nhất các yêu cầu và đi đến quyết định chọn lựa.
+  - Mọi biểu đồ, bảng biểu đưa vào báo cáo đều phải có giải thích và chú thích lý do cụ thể.
 
-### 1.4. Xác định Phạm vi & Định hướng công nghệ AI
-- **Giới hạn bài toán (Scope):** Không ôm đồm quá nhiều chức năng. Đối với AI, chỉ nên tập trung vào 1 ngách nhỏ để đào sâu kỹ thuật (VD: Thay vì làm cả chẩn đoán và đề xuất phác đồ điều trị cho nhiều bệnh, hãy tập trung vào chẩn đoán 1 loại bệnh cụ thể hoặc xử lý 1 loại dữ liệu y khoa).
-- **Gợi ý ra quyết định, không thay thế con người:** Hệ thống AI hiện tại chỉ dừng ở mức độ "Hỗ trợ/Gợi ý" (Decision Support), người chịu trách nhiệm và ra quyết định cuối cùng vẫn là con người. Đừng cam kết phần mềm sẽ "tự động ra quyết định điều phối".
-- **Limitation (Giới hạn đề tài):** Limitation là những điểm yếu kỹ thuật mà mô hình/phần mềm chưa giải quyết được (VD: Chạy còn chậm, cần tối ưu thêm), chứ không phải là liệt kê các chức năng chưa làm.
+## 2. 📝 Bài Tập & Đồ Án
+- **Hoàn thiện Báo cáo Đồ án và Thực hành:** Tiếp tục hiệu chỉnh lại nội dung Đồ án (Bước 1 đến Bước 4) và Thực hành (Bước 0 đến Bước 4) dựa trên các góp ý chuyên môn của cô. Chú ý tính nhất quán từ bối cảnh, mục tiêu đến KPI và phương án kiến trúc.
+- **Viết bản Draft báo cáo cuối kỳ:** Tiến hành viết bản nháp (draft) hoàn chỉnh cho báo cáo đồ án và thực hành.
 
----
-
-## 2. 📝 Bài tập & Đồ án
-
-- **Phạm vi báo cáo:**
-  - **Bài Đồ án:** Báo cáo từ Bước 1 đến Bước 4.
-  - **Bài Thực hành:** Báo cáo từ Bước 0 đến Bước 4.
-- **Lịch trình:** Các nhóm tiếp tục chỉnh sửa bản nháp (draft) báo cáo. **Buổi thứ 9** sẽ là buổi thi / vấn đáp cuối cùng.
-- **Nhiệm vụ về nhà:** Tất cả các nhóm dựa trên góp ý của buổi 6 để tự sửa lại Thuyết minh, slide, đặc biệt là phần KPI, Bảng so sánh phương án kiến trúc, và Tên đề tài.
-
----
-
-## 3. ⚠️ Yêu cầu & Nhắc nhở từ Cô
-
-1. **Trình bày ngắn gọn:** Mỗi nhóm chỉ có **15 phút**, phải đi thẳng vào trọng tâm tóm tắt các bước, không được đọc rườm rà.
-2. **Học hỏi lẫn nhau:** Các nhóm báo cáo sau BẮT BUỘC phải lắng nghe nhận xét của các nhóm trước để rút kinh nghiệm. Không được mắc lại các lỗi tương tự (như lỗi lập bảng so sánh bằng AI, lỗi nhầm KPI hệ thống thành KPI doanh nghiệp) mà cô đã cất công sửa ở các nhóm đầu.
-3. **Hiểu rõ mình đang làm gì:** Sinh viên IT đi tư vấn và làm dự án phần mềm thì sản phẩm bàn giao là phần mềm/hệ thống công nghệ, do đó ngôn từ, mục tiêu, độ đo phải thể hiện được năng lực chuyên môn IT.
+## 3. Yêu Cầu & Nhắc Nhở
+- **Lịch thi vấn đáp:** Buổi báo cáo thi (vấn đáp) sẽ diễn ra vào **tuần thứ 9** (hiện tại là tuần 6). Các nhóm cần chuẩn bị hoàn tất tài liệu và báo cáo theo tiến độ, không để dồn việc.
+- **Kỹ năng báo cáo và lắng nghe:**
+  - Giới hạn thời gian trình bày là 15 phút, cần đi thẳng vào vấn đề kỹ thuật trọng tâm.
+  - Các nhóm báo cáo sau phải chú ý lắng nghe nhận xét của các nhóm trước để tự đúc kết rút kinh nghiệm, tuyệt đối không lặp lại các lỗi tương tự (như lỗi lập bảng so sánh chung chung, lỗi KPI không trích dẫn).
