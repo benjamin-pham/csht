@@ -1,6 +1,6 @@
 # 1. Thông tin chung & tên đề tài
 
-- **Tên đề tài:** Ứng dụng mô hình AI Time-Series Forecasting dự báo lưu lượng khách hàng đa chi nhánh.
+- **Tên đề tài:** Ứng dụng mô hình AI (Artificial Intelligence) Time-Series Forecasting dự báo lưu lượng khách hàng đa chi nhánh.
 - **Thông tin chung:** Đơn vị chủ trì: Nhóm 5. Phạm vi triển khai: Nền tảng hạ tầng tính toán Cloud và luồng dữ liệu của chuỗi Ways Station.
 
 # 2. Bối cảnh – hiện trạng – vấn đề
@@ -8,29 +8,29 @@
 **Chuẩn bị đầu vào:**
 - **Bối cảnh:** Chuỗi Ways Station có nhu cầu vận hành đa chi nhánh, đòi hỏi khả năng phản ứng nhanh với sự biến động của khách hàng trong ngày.
 - **Vấn đề hiện tại:** Việc phân tích và dự báo số lượng khách hàng tại mỗi chi nhánh hiện được thực hiện thủ công. Cơ sở dữ liệu giao dịch rời rạc, chưa được làm sạch, thiếu luồng xử lý tự động. Hạ tầng hiện hữu không đáp ứng đủ năng lực tính toán để huấn luyện các mô hình học máy.
-- **Đối tượng sử dụng:** Hệ thống dữ liệu tập trung (Data Warehouse), máy chủ dịch vụ API.
-- **Hệ thống liên quan:** Hệ thống POS tại chi nhánh, phần mềm ERP và các nền tảng báo cáo nội bộ.
+- **Đối tượng sử dụng:** Hệ thống dữ liệu tập trung (Data Warehouse), máy chủ dịch vụ API (Application Programming Interface).
+- **Hệ thống liên quan:** Hệ thống POS (Point of Sale) tại chi nhánh, phần mềm ERP (Enterprise Resource Planning) và các nền tảng báo cáo nội bộ.
 - **Ràng buộc:** Giới hạn cấu hình hạ tầng hiện có, yêu cầu cao về tính sẵn sàng và tính bảo mật của luồng dữ liệu (Data Pipeline).
 
 ## 2.1. Hiện trạng vận hành & Điểm nghẽn hệ thống
 - **Dữ liệu phân tán và độ trễ cao:** Toàn bộ dữ liệu giao dịch POS tại 34 chi nhánh của Ways Station hiện được xử lý thủ công và lưu trữ phân tán, dẫn đến độ trễ tổng hợp dữ liệu từ 48 đến 72 giờ.
 - **Hoạch định tài nguyên bị động theo kinh nghiệm:** Do thiếu công cụ dự báo định lượng theo chuỗi thời gian, việc điều phối nguồn lực tại các chi nhánh phụ thuộc hoàn toàn vào cảm tính:
   - *Khung giờ cao điểm:* Thiếu hụt nhân lực phục vụ và gián đoạn nguồn cung vật tư, kéo dài thời gian chờ đợi của khách hàng và làm suy giảm chất lượng dịch vụ.
-  - *Khung giờ thấp điểm:* Dư thừa nhân lực phân bổ cố định, gây lãng phí nghiêm trọng chi phí vận hành (OPEX).
+  - *Khung giờ thấp điểm:* Dư thừa nhân lực phân bổ cố định, gây lãng phí nghiêm trọng chi phí vận hành (OPEX - Operational Expenditure).
 - **Hạn chế hạ tầng tính toán cục bộ:** Máy chủ tại chi nhánh không đủ năng lực tính toán để làm sạch, trích xuất đặc trưng và huấn luyện các mô hình học máy trên tập dữ liệu lịch sử lớn.
 
 ## 2.2. Động lực đầu tư & Giá trị hệ thống mang lại
-Xây dựng hệ thống dự báo lưu lượng khách hàng theo chuỗi thời gian (AI Time-Series Forecasting) kết hợp đường ống dữ liệu tự động (Automated Data Pipeline) đóng vai trò là **Hệ thống hỗ trợ ra quyết định (Decision Support System - DSS)**, mang lại các giá trị cốt lõi:
+Xây dựng hệ thống dự báo lưu lượng khách hàng theo chuỗi thời gian (AI Time-Series Forecasting) kết hợp đường ống dữ liệu tự động (Automated Data Pipeline) đóng vai trò là **Hệ thống hỗ trợ ra quyết định (Decision Support System - DSS (Decision Support System))**, mang lại các giá trị cốt lõi:
 1. **Hỗ trợ tối ưu hóa điều phối nhân lực:** Cung cấp dữ liệu dự báo lưu lượng khách theo từng khung giờ trong ngày, làm cơ sở định lượng giúp bộ phận điều phối thiết lập ca làm việc linh hoạt, hạn chế giờ công dư thừa vào giờ vắng và bảo đảm đủ nhân lực trong giờ cao điểm.
 2. **Hỗ trợ kế hoạch điều phối cung ứng:** Đưa ra dự báo nhu cầu phục vụ sát thực tế, hỗ trợ bộ phận kho vận lập kế hoạch luân chuyển hàng hóa kịp thời, hạn chế tình trạng đứt gãy cung ứng hoặc tồn đọng hàng hóa quá hạn.
 3. **Cung cấp dữ liệu định hướng kế hoạch tiếp thị:** Nhận diện chính xác các khung giờ thấp điểm định kỳ để gợi ý thời điểm kích cầu dịch vụ, tránh việc triển khai khuyến mãi lãng phí vào các khung giờ đã đạt ngưỡng phục vụ tối đa.
 
 ## 2.3. Ưu thế kiến trúc kỹ thuật & Cam kết vận hành
-- **Tối ưu chi phí nhờ nền tảng Cloud:** Chuyển đổi mô hình đầu tư từ mua sắm máy chủ vật lý tốn kém (CAPEX) sang thuê dịch vụ điện toán đám mây linh hoạt (OPEX).
+- **Tối ưu chi phí nhờ nền tảng Cloud:** Chuyển đổi mô hình đầu tư từ mua sắm máy chủ vật lý tốn kém (CAPEX - Capital Expenditure) sang thuê dịch vụ điện toán đám mây linh hoạt (OPEX).
 - **Khả năng tự động co giãn (Auto-scaling):** Hạ tầng Cloud tự động mở rộng tài nguyên khi lưu lượng gọi API tăng vọt và thu hẹp khi tải giảm, bảo đảm hệ thống vận hành liên tục mà không bị nghẽn tải.
-- **Cam kết mức độ dịch vụ kỹ thuật (SLA):** Đảm bảo tính sẵn sàng của dịch vụ API đạt Uptime $\ge 99.9\%$ (thời gian gián đoạn dịch vụ tối đa dưới 43.2 phút/tháng), thời gian phản hồi ở mức mili-giây và dữ liệu được bảo vệ an toàn theo các chuẩn mực bảo mật thông tin.
+- **Cam kết mức độ dịch vụ kỹ thuật (SLA - Service Level Agreement):** Đảm bảo tính sẵn sàng của dịch vụ API đạt Uptime $\ge 99.9\%$ (thời gian gián đoạn dịch vụ tối đa dưới 43.2 phút/tháng), thời gian phản hồi ở mức mili-giây và dữ liệu được bảo vệ an toàn theo các chuẩn mực bảo mật thông tin.
 
-# 3. Mục tiêu & KPI
+# 3. Mục tiêu & KPI (Key Performance Indicator)
 
 ## 3.1. Mục tiêu tổng quát
 Xây dựng nền tảng tích hợp tự động thu thập dữ liệu giao dịch, huấn luyện mô hình học máy (Machine Learning) để phân tích chuỗi thời gian, và triển khai dự báo thông qua các API chuyên dụng phục vụ nội bộ.
@@ -41,7 +41,7 @@ Toàn bộ hệ thống phần mềm không áp dụng các KPI phân rã theo t
 ### Nhóm A: KPI Mô hình Trí tuệ nhân tạo (AI Model KPIs)
 Đo lường năng lực và độ chính xác của mô hình học máy chuỗi thời gian (Time-Series Forecasting) so với baseline thủ công:
 
-1. **Sai số tỷ lệ phần trăm tuyệt đối trung bình (MAPE - Mean Absolute Percentage Error):**
+1. **Sai số tỷ lệ phần trăm tuyệt đối trung bình (MAPE (Mean Absolute Percentage Error) - Mean Absolute Percentage Error):**
    - *KPI:* $\text{MAPE} < 10\%$ trên tập dữ liệu kiểm thử (Test set).
    - *Công thức:*
      $$\text{MAPE} = \frac{1}{n} \sum_{i=1}^{n} \left| \frac{y_i - \hat{y}_i}{y_i} \right| \times 100\%$$
@@ -49,7 +49,7 @@ Toàn bộ hệ thống phần mềm không áp dụng các KPI phân rã theo t
    - *Baseline đối chứng:* Phương pháp dự báo truyền thống Moving Average 7 ngày cho MAPE ước tính ~25-30%; mô hình ARIMA(1,1,1) cho MAPE ước tính ~18-22% (theo khảo sát vận hành và tham khảo nghiên cứu của Hyndman & Athanasopoulos [[8]](#ref8)). Mô hình AI cam kết **cải thiện sai số tối thiểu 10%** so với phương pháp Baseline tốt nhất và duy trì **độ chênh lệch hiệu suất $\Delta \le 10\%$** giữa các ngữ cảnh dữ liệu khác nhau (chi nhánh Gym vs Gaming vs Hub) trên tối thiểu 4 bộ dữ liệu kiểm thử.
    - *Trích dẫn:* Scikit-Learn, *Mean absolute percentage error* [1].
 
-2. **Sai số tuyệt đối trung bình (MAE - Mean Absolute Error):**
+2. **Sai số tuyệt đối trung bình (MAE (Mean Absolute Error) - Mean Absolute Error):**
    - *KPI:* $\text{MAE} \le 3$ khách/chi nhánh/khung giờ.
    - *Công thức:*
      $$\text{MAE} = \frac{1}{n} \sum_{i=1}^{n} |y_i - \hat{y}_i|$$
@@ -84,11 +84,11 @@ Toàn bộ hệ thống phần mềm không áp dụng các KPI phân rã theo t
    - *Công thức tính đầy đủ:* $\text{Completeness} = \frac{\text{Số lượng bản ghi nạp thành công}}{\text{Tổng số bản ghi gốc tại POS}} \times 100\%$
    - *KPI Tính kịp thời (Data Freshness):* Độ trễ luồng dữ liệu $\le 24$ giờ (hoàn tất đồng bộ dữ liệu lúc 01:00 AM mỗi ngày).
    - *Công thức tính kịp thời:* $\Delta t_{freshness} = t_{\text{Data Warehouse}} - t_{\text{POS}} \le 24\text{h}$
-   - *Lưu ý phân biệt với Đồ án:* Đồ án hạ tầng cam kết Data Freshness $\le 5s$ (real-time streaming qua CDC) cho toàn bộ nền tảng dữ liệu tập trung. Tại bài Thực hành, luồng huấn luyện mô hình AI sử dụng kiến trúc Batch Processing xử lý dữ liệu lịch sử theo lô hàng đêm (không yêu cầu real-time) nên mục tiêu $\le 24\text{h}$ là phù hợp với đặc thù bài toán dự báo chuỗi thời gian.
-   - *Trích dẫn:* ISO/IEC 25012: Data quality model [5].
+   - *Lưu ý phân biệt với Đồ án:* Đồ án hạ tầng cam kết Data Freshness $\le 5s$ (real-time streaming qua CDC (Change Data Capture)) cho toàn bộ nền tảng dữ liệu tập trung. Tại bài Thực hành, luồng huấn luyện mô hình AI sử dụng kiến trúc Batch Processing xử lý dữ liệu lịch sử theo lô hàng đêm (không yêu cầu real-time) nên mục tiêu $\le 24\text{h}$ là phù hợp với đặc thù bài toán dự báo chuỗi thời gian.
+   - *Trích dẫn:* ISO (International Organization for Standardization)/IEC (International Electrotechnical Commission) 25012: Data quality model [5].
 
 4. **Tỷ lệ lỗi dịch vụ (API Error Rate):**
-   - *KPI:* Tỷ lệ lỗi máy chủ (HTTP 5xx) $< 0.1\%$ trên tổng số lượt gọi API.
+   - *KPI:* Tỷ lệ lỗi máy chủ (HTTP (Hypertext Transfer Protocol) 5xx) $< 0.1\%$ trên tổng số lượt gọi API.
    - *Công thức:* $\text{Error Rate} = \frac{\text{Số lượng phản hồi lỗi (HTTP 5xx)}}{\text{Tổng số lượng request đến API}} \times 100\%$
    - *Trích dẫn:* Google Cloud, *Site Reliability Engineering - Error Rates* [7].
 
@@ -99,9 +99,9 @@ Nhằm đảm bảo tính xuyên suốt từ thiết kế đến nghiệm thu v�
 | :--- | :--- | :--- | :--- | :--- |
 | **G1: Khảo sát & Phân tích dữ liệu** | Thu thập dữ liệu lịch sử POS, chuẩn hóa schema, làm sạch dữ liệu khuyết thiếu. | Tài liệu đặc tả dữ liệu, Dataset đã làm sạch. | Tính đầy đủ dữ liệu $\ge 99.5\%$, Schema hợp lệ $100\%$. | Kỹ sư Dữ liệu (Data Engineer) |
 | **G2: Thiết kế kiến trúc phần mềm** | Thiết kế Data Pipeline, cấu trúc Web Service RESTful API và mô hình AI. | Tài liệu thiết kế kiến trúc, API Contract. | $100\%$ API đạt chuẩn RESTful, kiến trúc sẵn sàng mở rộng. | Kiến trúc sư Phần mềm (Software Architect) |
-| **G3: Phát triển mô hình & Pipeline** | Xây dựng đường ống ETL tự động; huấn luyện và tinh chỉnh mô hình TSFM. | Mã nguồn Data Pipeline, Artifact mô hình AI đã huấn luyện. | $\text{MAPE} < 10\%$, $\text{Precision} \ge 85\%$, Inference Latency $\le 200\text{ms}$. | Kỹ sư AI (Machine Learning Engineer) |
-| **G4: Kiểm thử & Đóng gói phần mềm** | Kiểm thử tích hợp (Integration Test), tải (Load Test), đóng gói Container. | Docker Image, Bộ kịch bản Test, Báo cáo UAT. | API Response Time $< 500\text{ms}$ (P95), Error Rate $< 0.1\%$. | Kỹ sư Kiểm thử (QA Engineer) |
-| **G5: Triển khai & Vận hành** | Triển khai trên môi trường Cloud, thiết lập giám sát Prometheus/Grafana. | Hệ thống API Production, Dashboard giám sát. | SLA Uptime $\ge 99.9\%$, Freshness $< 24\text{h}$, MTTD $\le 15\text{p}$. | Kỹ sư DevOps / SRE |
+| **G3: Phát triển mô hình & Pipeline** | Xây dựng đường ống ETL (Extract, Transform, Load) tự động; huấn luyện và tinh chỉnh mô hình TSFM. | Mã nguồn Data Pipeline, Artifact mô hình AI đã huấn luyện. | $\text{MAPE} < 10\%$, $\text{Precision} \ge 85\%$, Inference Latency $\le 200\text{ms}$. | Kỹ sư AI (Machine Learning Engineer) |
+| **G4: Kiểm thử & Đóng gói phần mềm** | Kiểm thử tích hợp (Integration Test), tải (Load Test), đóng gói Container. | Docker Image, Bộ kịch bản Test, Báo cáo UAT (User Acceptance Testing). | API Response Time $< 500\text{ms}$ (P95), Error Rate $< 0.1\%$. | Kỹ sư Kiểm thử (QA (Quality Assurance) Engineer) |
+| **G5: Triển khai & Vận hành** | Triển khai trên môi trường Cloud, thiết lập giám sát Prometheus/Grafana. | Hệ thống API Production, Dashboard giám sát. | SLA Uptime $\ge 99.9\%$, Freshness $< 24\text{h}$, MTTD (Mean Time To Detect) $\le 15\text{p}$. | Kỹ sư DevOps / SRE (Site Reliability Engineering) |
 
 # 4. Đối tượng áp dụng, phạm vi, giả định/ràng buộc
 
@@ -115,7 +115,7 @@ Nhằm đảm bảo tính xuyên suốt từ thiết kế đến nghiệm thu v�
 - **Giới hạn trách nhiệm AI:** Nền tảng AI được phát triển chỉ đóng vai trò **Hỗ trợ ra quyết định**. Các bộ phận nghiệp vụ sử dụng kết quả dự báo để tham khảo; việc ra quyết định điều phối cuối cùng hoàn toàn phụ thuộc vào quản lý con người.
 - **Giới hạn kỹ thuật:** Khả năng dự đoán của mô hình học máy sẽ bị suy giảm đáng kể khi đối mặt với các sự kiện đột biến không có mẫu trong tập dữ liệu lịch sử (ví dụ: bão lũ). Mô hình yêu cầu quá trình tái huấn luyện định kỳ mỗi tháng để duy trì độ chính xác.
 
-# 5. Yêu cầu nghiệp vụ & yêu cầu hệ thống (FR/NFR)
+# 5. Yêu cầu nghiệp vụ & yêu cầu hệ thống (FR (Functional Requirement)/NFR (Non-Functional Requirement))
 
 ## 5.1. Yêu cầu nghiệp vụ (Business Requirements / Use Case level)
 
@@ -123,7 +123,7 @@ Yêu cầu nghiệp vụ được trình bày theo use case/user story, bám sá
 
 | ID | Tên nghiệp vụ (User Story) | Tác nhân | Luồng chính (Main Flow) | Ngoại lệ (Exception Flow) | Đầu ra / Kết quả |
 |:---|:---|:---|:---|:---|:---|
-| BR-01 | Xem dự báo lưu lượng khách | Quản lý chi nhánh | 1. Đăng nhập hệ thống <br>2. Chọn chi nhánh & khoảng thời gian <br>3. Hệ thống query API trả về dữ liệu dự báo | API lỗi hoặc chưa có dự báo mới $\rightarrow$ Báo lỗi & hiển thị dữ liệu lịch sử của tuần trước. | Bảng/Biểu đồ dự báo khách theo giờ (JSON). |
+| BR (Business Requirement)-01 | Xem dự báo lưu lượng khách | Quản lý chi nhánh | 1. Đăng nhập hệ thống <br>2. Chọn chi nhánh & khoảng thời gian <br>3. Hệ thống query API trả về dữ liệu dự báo | API lỗi hoặc chưa có dự báo mới $\rightarrow$ Báo lỗi & hiển thị dữ liệu lịch sử của tuần trước. | Bảng/Biểu đồ dự báo khách theo giờ (JSON - JavaScript Object Notation). |
 | BR-02 | Nhận cảnh báo giờ cao điểm | Bộ phận điều phối | 1. Hệ thống phân tích kết quả dự báo <br>2. Nếu lượng khách $> 1.5 \times$ trung bình $\rightarrow$ Tự động gửi cảnh báo. | Gửi email/webhook thất bại $\rightarrow$ Đẩy noti trực tiếp trên App/Dashboard nội bộ. | Thông báo cảnh báo (webhook/email). |
 | BR-03 | Tự động Pipeline dữ liệu | Hệ thống (Cronjob) | 1. Kết nối POS DB (01:00 AM) <br>2. Trích xuất batch <br>3. Làm sạch, chuẩn hóa <br>4. Nạp vào Data Warehouse | Rớt kết nối mạng tới POS $\rightarrow$ Retry 3 lần, nếu thất bại Alert cho Kỹ sư dữ liệu. | Dataset chuẩn hóa lưu tại Data Warehouse. |
 | BR-04 | Giám sát trạng thái hệ thống | Kỹ sư vận hành | 1. Truy cập Grafana <br>2. Xem dashboard metrics (Pipeline, API, Model, Resource) | Mất kết nối tới Prometheus $\rightarrow$ Bật cảnh báo khẩn qua PagerDuty/Slack. | Dashboard giám sát real-time (Uptime, MAPE). |
@@ -135,9 +135,9 @@ Nhóm theo 3 module chính tương ứng với 3 tầng kỹ thuật của hệ 
 **Module 1: Data Pipeline (Thu thập & Xử lý dữ liệu)**
 | ID | Yêu cầu chức năng | Mô tả |
 |:---|:---|:---|
-| FR-01 | Trích xuất dữ liệu POS tự động | Kết nối database POS tại 34 chi nhánh qua kênh mã hóa TLS, trích xuất giao dịch theo lịch batch hàng đêm (01:00 AM). |
+| FR-01 | Trích xuất dữ liệu POS tự động | Kết nối database POS tại 34 chi nhánh qua kênh mã hóa TLS (Transport Layer Security), trích xuất giao dịch theo lịch batch hàng đêm (01:00 AM). |
 | FR-02 | Làm sạch và chuẩn hóa dữ liệu | Xử lý giá trị khuyết (missing values), loại bỏ bản ghi trùng lặp, chuẩn hóa schema thống nhất giữa các chi nhánh. |
-| FR-03 | Nạp dữ liệu vào Data Warehouse | Ghi dữ liệu đã làm sạch vào bảng staging, sau đó chuyển vào bảng chính (production tables) theo quy trình ELT. |
+| FR-03 | Nạp dữ liệu vào Data Warehouse | Ghi dữ liệu đã làm sạch vào bảng staging, sau đó chuyển vào bảng chính (production tables) theo quy trình ELT (Extract, Load, Transform). |
 | FR-04 | Ghi log trạng thái pipeline | Ghi nhận số bản ghi đầu vào/đầu ra, tỷ lệ thành công, thời gian thực thi mỗi lần chạy batch. |
 
 **Module 2: AI Forecasting Engine (Mô hình dự báo)**
@@ -154,7 +154,7 @@ Nhóm theo 3 module chính tương ứng với 3 tầng kỹ thuật của hệ 
 | FR-09 | RESTful API dự báo real-time | Endpoint `GET /api/v1/forecast/{branch_id}` trả kết quả dự báo 7 ngày dưới dạng JSON. Hỗ trợ filter theo ngày và khung giờ. |
 | FR-10 | RESTful API cảnh báo giờ cao điểm | Endpoint `GET /api/v1/alerts/{branch_id}` trả danh sách khung giờ đột biến kèm mức độ tin cậy (confidence score). |
 | FR-11 | Dashboard giám sát hệ thống | Hiển thị metrics pipeline (thời gian chạy, tỷ lệ thành công), metrics API (latency P95, error rate) và metrics mô hình (MAPE, MAE). |
-| FR-12 | Xác thực và phân quyền API | Áp dụng xác thực API Key/JWT cho mọi endpoint. Phân quyền theo vai trò (RBAC). |
+| FR-12 | Xác thực và phân quyền API | Áp dụng xác thực API Key/JWT (JSON Web Token) cho mọi endpoint. Phân quyền theo vai trò (RBAC - Role-Based Access Control). |
 
 ## 5.3. Yêu cầu phi chức năng (Non-Functional Requirements)
 
@@ -172,7 +172,7 @@ Các yêu cầu phi chức năng được thiết lập khớp trực tiếp v�
 | **Bảo mật** | Mã hóa kết nối trích xuất dữ liệu | Bắt buộc giao thức TLS 1.2+ | Ràng buộc Bước 0 |
 | **Bảo mật** | Xác thực API | Bắt buộc API Key / JWT | FR-12 |
 | **Mở rộng** | Hỗ trợ scale số lượng chi nhánh | Thêm lên 50 CN không cần đổi kiến trúc | Giả định Bước 4 |
-| **Tuân thủ** | Bảo mật thông tin cá nhân (PII) | Dữ liệu giao dịch được ẩn danh 100% | Ràng buộc NĐ13 |
+| **Tuân thủ** | Bảo mật thông tin cá nhân (PII - Personally Identifiable Information) | Dữ liệu giao dịch được ẩn danh 100% | Ràng buộc NĐ13 |
 
 # 6. Giải pháp đề xuất & kiến trúc (TO-BE, tích hợp, dữ liệu)
 
@@ -203,7 +203,7 @@ Kiến trúc được thiết kế trên nền tảng Cloud, chia thành 3 lớp
    - **Data Warehouse (PostgreSQL):** Kho dữ liệu có cấu trúc, lưu trữ dữ liệu sau khi đã được làm sạch và dữ liệu dự báo.
    - **Model Registry (MLflow):** Nơi lưu trữ, phiên bản hóa và quản lý các mô hình học máy (AI Models).
    - **Prometheus + Loki:** Các công cụ thu thập và lưu trữ thông số hoạt động (Metrics) và nhật ký hệ thống (Logs) phục vụ cho Grafana.
-   - **Object Storage (S3):** Nơi lưu trữ khối (Object Storage) dành cho dữ liệu thô (Raw Data) trích xuất từ các POS và các tạo tác mô hình (Model Artifacts).
+   - **Object Storage (S3 - Simple Storage Service):** Nơi lưu trữ khối (Object Storage) dành cho dữ liệu thô (Raw Data) trích xuất từ các POS và các tạo tác mô hình (Model Artifacts).
 
 ## 6.3. Luồng xử lý Data Pipeline
 
@@ -228,21 +228,21 @@ Luồng dữ liệu trong hệ thống được vận hành một cách tự đ�
 
 | Hệ thống Nguồn / Đích | Giao thức | Tần suất | Dữ liệu trao đổi (Mapping) | Bảo mật |
 |:---|:---|:---|:---|:---|
-| POS DB $\rightarrow$ S3 | JDBC/ODBC qua TLS | Batch 1 lần/đêm | Giao dịch ẩn danh (lượng khách, thời gian, mã chi nhánh) | Mã hóa in-transit |
-| S3 $\rightarrow$ Data Warehouse | Internal VPC | Theo luồng Extract | Dataset đã chuẩn hóa | Mã hóa at-rest (AES-256) |
+| POS DB (Database) $\rightarrow$ S3 | JDBC/ODBC qua TLS | Batch 1 lần/đêm | Giao dịch ẩn danh (lượng khách, thời gian, mã chi nhánh) | Mã hóa in-transit |
+| S3 $\rightarrow$ Data Warehouse | Internal VPC | Theo luồng Extract | Dataset đã chuẩn hóa | Mã hóa at-rest (AES-256 (Advanced Encryption Standard)) |
 | Forecast API $\rightarrow$ ERP | RESTful (HTTPS) | On-demand | JSON chứa array lượng khách dự báo theo slot giờ | JWT + RBAC |
 | Prometheus $\rightarrow$ Grafana | Internal scrape | 15 giây/lần | Metrics hệ thống IT (Uptime, API Latency) | Nội bộ mạng ảo VPC |
 
-# 7. Kế hoạch triển khai & tiến độ (WBS)
+# 7. Kế hoạch triển khai & tiến độ (WBS - Work Breakdown Structure)
 
 Chia theo 5 pha chuẩn mực. Kế hoạch triển khai khớp trực tiếp với bảng ánh xạ KPI theo giai đoạn đã định nghĩa tại Bước 3.3 (Bảng G1–G5):
 
 | Pha / Giai đoạn | Tuần | Hoạt động chính | Sản phẩm đầu ra (Deliverables) | Tiêu chí hoàn thành (Nghiệm thu) | Người chịu trách nhiệm (Owner) |
 |:---|:---:|:---|:---|:---|:---|
 | **1. Khảo sát & Phân tích (SRS/BRD)** | T1–T3 | Thu thập dữ liệu POS lịch sử $\ge$ 12 tháng; Phân tích chất lượng dữ liệu; Làm sạch missing/duplicate. | Tài liệu đặc tả dữ liệu (Data Dictionary); Dataset sạch. | Completeness $\ge$ 99.5%; Schema hợp lệ 100%. | Kỹ sư Dữ liệu (Data Engineer) |
-| **2. Thiết kế (HLD/LLD)** | T4–T5 | Thiết kế Data Pipeline; Thiết kế API Contract (OpenAPI); Thiết kế ERD; Thiết kế hạ tầng Cloud. | HLD/LLD; API Contract; ERD; Terraform scripts. | Kiến trúc được Sponsor và Key User duyệt 100%. | Kiến trúc sư / Backend Lead |
-| **3. Phát triển (Dev)** | T6–T10 | Code Airflow DAGs (ETL); Huấn luyện mô hình TSFM; Code API Services (FastAPI); Tích hợp MLflow. | Source code Pipeline & API; Artifact AI Model. | $\text{MAPE} < 10\%$; $\text{Precision} \ge 85\%$. | Kỹ sư AI (ML Engineer) |
-| **4. Kiểm thử (SIT/UAT)** | T11–T13 | Test tích hợp; Test tải (100 CCU); Test bảo mật; Đóng gói Docker; Hỗ trợ UAT. | Kịch bản test; Báo cáo SIT; Biên bản UAT (Sign-off). | API P95 $\le$ 500ms; Error Rate $<$ 0.1%; Pass UAT. | Kỹ sư Kiểm thử (QA) |
+| **2. Thiết kế (HLD (High-Level Design)/LLD (Low-Level Design))** | T4–T5 | Thiết kế Data Pipeline; Thiết kế API Contract (OpenAPI); Thiết kế ERD (Entity Relationship Diagram); Thiết kế hạ tầng Cloud. | HLD/LLD; API Contract; ERD; Terraform scripts. | Kiến trúc được Sponsor và Key User duyệt 100%. | Kiến trúc sư / Backend Lead |
+| **3. Phát triển (Dev)** | T6–T10 | Code Airflow DAGs (ETL); Huấn luyện mô hình TSFM; Code API Services (FastAPI); Tích hợp MLflow. | Source code Pipeline & API; Artifact AI Model. | $\text{MAPE} < 10\%$; $\text{Precision} \ge 85\%$. | Kỹ sư AI (ML (Machine Learning) Engineer) |
+| **4. Kiểm thử (SIT (System Integration Testing)/UAT)** | T11–T13 | Test tích hợp; Test tải (100 CCU); Test bảo mật; Đóng gói Docker; Hỗ trợ UAT. | Kịch bản test; Báo cáo SIT; Biên bản UAT (Sign-off). | API P95 $\le$ 500ms; Error Rate $<$ 0.1%; Pass UAT. | Kỹ sư Kiểm thử (QA) |
 | **5. Triển khai & Vận hành (Rollout/Ops)** | T14–T15 | Triển khai Kubernetes; Cấu hình Grafana/Prometheus; Pilot 5 chi nhánh $\rightarrow$ Rollout 34 chi nhánh. | Hệ thống Live; Dashboard giám sát; Tài liệu vận hành (Runbook). | Uptime $\ge$ 99.9%; Freshness $\le$ 24h. | Kỹ sư DevOps/SRE |
 
 *Tổng thời lượng: 15 tuần (~4 tháng).*
@@ -252,11 +252,11 @@ Chia theo 5 pha chuẩn mực. Kế hoạch triển khai khớp trực tiếp v�
 ## 8.1. Cơ cấu nhân sự
 | Vai trò | Số lượng | Trách nhiệm chính |
 |:---|:---:|:---|
-| **Project Manager (PM)** | 1 | Quản lý rào cản, ngân sách, tiến độ; Báo cáo Sponsor (Ban Giám đốc). |
+| **Project Manager (PM - Project Manager)** | 1 | Quản lý rào cản, ngân sách, tiến độ; Báo cáo Sponsor (Ban Giám đốc). |
 | **Kỹ sư Dữ liệu (Data Engineer)** | 2 | Phát triển luồng ETL/ELT, duy trì Data Warehouse. |
 | **Kỹ sư AI (ML Engineer)** | 2 | Phát triển, tinh chỉnh thuật toán và vận hành mô hình học máy. |
 | **Kỹ sư Backend (Backend Dev)** | 1 | Viết API, phân quyền, tối ưu response time. |
-| **Kỹ sư DevOps / SRE** | 1 | Xây hạ tầng Cloud, CI/CD, hệ thống monitoring, lo SLA. |
+| **Kỹ sư DevOps / SRE** | 1 | Xây hạ tầng Cloud, CI/CD (Continuous Integration/Continuous Deployment), hệ thống monitoring, lo SLA. |
 | **Kỹ sư Kiểm thử (QA)** | 1 | Test chất lượng, hiệu năng, điều phối UAT với User. |
 | **Key User (QL Chi nhánh)** | 2 | Cung cấp logic xếp ca thực tế, kiểm thử UAT và ký sign-off. |
 
@@ -287,7 +287,7 @@ Chi phí tách bạch giữa phí đầu tư xây dựng ban đầu (CAPEX) và 
 |:---|:---|---:|
 | **Nhân công (Dev/Outsource)** | Lương khoán đội dự án (PM, Data, ML, BE, SRE, QA) trong 1-4 tháng tùy vị trí (Trung bình 22tr/người/tháng). | 594.000.000 |
 | **Bản quyền (License)** | Sử dụng Open-source (Airflow, MLflow, FastAPI). | 0 |
-| **Hạ tầng (GĐ Phát triển)** | Phí thuê VM, GPU training, PostgreSQL, S3 môi trường Dev/Staging trong 4 tháng. | 64.000.000 |
+| **Hạ tầng (GĐ Phát triển)** | Phí thuê VM, GPU (Graphics Processing Unit) training, PostgreSQL, S3 môi trường Dev/Staging trong 4 tháng. | 64.000.000 |
 | **Đào tạo & Chuyển giao** | Tổ chức 2 buổi hướng dẫn đọc Dashboard cho Key Users. | 5.000.000 |
 | **Tổng CAPEX** | (Chưa bao gồm dự phòng rủi ro 10%) | **663.000.000** |
 
@@ -300,7 +300,7 @@ Chi phí tách bạch giữa phí đầu tư xây dựng ban đầu (CAPEX) và 
 | **Bảo mật & Tuân thủ** | Thuê bên thứ 3 Pentest đánh giá bảo mật API định kỳ (2 lần/năm). | 20.000.000 |
 | **Tổng OPEX / Năm 1** | (Chưa bao gồm dự phòng rủi ro 10%) | **325.800.000** |
 
-## 9.2. Tổng chi phí sở hữu (TCO) & Phương án tài chính
+## 9.2. Tổng chi phí sở hữu (TCO - Total Cost of Ownership) & Phương án tài chính
 *   **Tổng dự phòng rủi ro (Contingency 10%):** 98.880.000 VNĐ
 *   **Tổng TCO (Năm 1) = CAPEX + OPEX + Contingency = 1.087.680.000 VNĐ**
 *   **Phương án tài chính:** Chủ trương chuyển hóa 100% chi phí hạ tầng máy chủ thành chi phí hoạt động OPEX hàng tháng (thuê Cloud) thay vì mua thiết bị vật lý. Tiết kiệm phí license qua hệ sinh thái mã nguồn mở.
@@ -346,19 +346,19 @@ Bảng Risk Register nhận diện các rủi ro có thể xảy ra trong quá t
 *   **Giai đoạn Hypercare (1 tháng sau Go-live):** Đội dự án duy trì hỗ trợ mức cao nhất, họp chớp nhoáng hàng ngày (Daily Standup) lúc 09:00 AM để rà soát lỗi API và độ trễ dữ liệu.
 *   **Quy trình hỗ trợ ITSM (Tier 1-2-3):** 
     - Tier 1: Helpdesk nội bộ tiếp nhận ticket.
-    - Tier 2: Vấn đề dữ liệu/API đẩy cho đội IT nội bộ của Ways Station.
+    - Tier 2: Vấn đề dữ liệu/API đẩy cho đội IT (Information Technology) nội bộ của Ways Station.
     - Tier 3: Vấn đề lõi AI/Hạ tầng sâu đẩy về đội dự án (SRE/ML Eng). Cam kết SLA xử lý lỗi nghiêm trọng $\le 4$ giờ.
 
 ## 11.2. Giám sát hệ thống (Monitoring) và An toàn dữ liệu
 *   **Monitoring & Alerting:** Sử dụng Grafana giám sát 3 metrics chính (Pipeline Freshness, API Latency, Model MAPE). Gửi cảnh báo khẩn cấp qua PagerDuty/Slack nếu Uptime $< 99.9\%$.
-*   **Backup & Disaster Recovery (DR):** 
+*   **Backup & Disaster Recovery (DR - Disaster Recovery):** 
     - Áp dụng **nguyên tắc sao lưu 3-2-1**: Sao lưu Data Warehouse (PostgreSQL) tự động hàng ngày (có bản lưu cục bộ và bản đồng bộ lên Cloud Storage cách ly).
-    - DR Drill (Diễn tập phục hồi thảm họa) thực hiện 6 tháng/lần, đảm bảo RPO $< 24$h và RTO $< 4$h.
+    - DR Drill (Diễn tập phục hồi thảm họa) thực hiện 6 tháng/lần, đảm bảo RPO (Recovery Point Objective) $< 24$h và RTO (Recovery Time Objective) $< 4$h.
 
 ## 11.3. Bàn giao và Chuyển giao công nghệ
 Gói bàn giao cho đội ngũ IT của Ways Station bao gồm:
 *   Mã nguồn (Source Code) Data Pipeline, AI Model và API Services (trên GitLab).
-*   Tài khoản quản trị Cloud (AWS/GCP), MLflow, Airflow.
+*   Tài khoản quản trị Cloud (AWS (Amazon Web Services)/GCP), MLflow, Airflow.
 *   Tài liệu Kiến trúc (HLD/LLD), Sổ tay vận hành (Runbook) cho các kịch bản xử lý sự cố thường gặp.
 
 # 12. Nghiệm thu & đánh giá hiệu quả
@@ -381,7 +381,7 @@ Việc đánh giá hệ thống không chỉ dừng ở mặt kỹ thuật (thá
 
 | Thực thể | Thuộc tính chính | Mô tả |
 |:---|:---|:---|
-| **Branch** | `branch_id` (PK), `branch_name`, `branch_type`, `region` | Danh mục chi nhánh (Master Data) |
+| **Branch** | `branch_id` (PK - Primary Key), `branch_name`, `branch_type`, `region` | Danh mục chi nhánh (Master Data) |
 | **Transaction_Hourly** | `id` (PK), `branch_id` (FK), `date`, `hour_slot`, `customer_count` | Dữ liệu lượng khách thực tế tổng hợp theo giờ |
 | **Forecast_Result** | `id` (PK), `branch_id` (FK), `forecast_date`, `hour_slot`, `predicted_count`, `is_peak` | Kết quả xuất ra từ mô hình dự báo AI |
 | **Model_Metadata** | `model_id` (PK), `version`, `mape_score`, `mae_score`, `status` | Thông tin lịch sử độ chính xác mô hình |
