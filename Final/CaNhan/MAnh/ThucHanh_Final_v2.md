@@ -151,7 +151,7 @@ Hai bộ KPI đo **hai đối tượng khác nhau**; các ngưỡng chênh lệc
 ## 4.2. Phần ngoài phạm vi
 
 - Không can thiệp, sửa đổi kiến trúc phần mềm quản lý kho, phần mềm nhân sự, hoặc hệ thống ERP hiện hành. Các phần mềm này giao tiếp thông qua API được cung cấp.
-- **Không bao gồm đầu tư hạ tầng Lớp 4 & Lớp 5** (API Gateway, Kafka, Edge Cluster, Data Lakehouse, IAM tập trung) — nội dung này thuộc đề tài đồ án cùng nhóm *"Đầu tư nền tảng tích hợp ứng dụng và nền tảng dữ liệu tập trung cho chuỗi Ways Station"*. Bài thực hành giả định một môi trường Cloud độc lập và **không phụ thuộc vào việc đồ án có được phê duyệt hay không**. Trường hợp cả hai được triển khai đồng thời, hệ thống dự báo sẽ tái sử dụng Data Lakehouse của nền tảng thay vì dựng Data Warehouse riêng (xem ghi chú chi phí tại mục 9.4).
+- **Không bao gồm đầu tư hạ tầng Lớp 4 & Lớp 5** (API Gateway, Kafka, Edge Cluster, Data Lakehouse, IAM tập trung) — nội dung này thuộc đề tài đồ án cùng nhóm *Đầu tư nền tảng tích hợp ứng dụng và nền tảng dữ liệu tập trung cho chuỗi Ways Station*. Bài thực hành giả định một môi trường Cloud độc lập và **không phụ thuộc vào việc đồ án có được phê duyệt hay không**. Trường hợp cả hai được triển khai đồng thời, hệ thống dự báo sẽ tái sử dụng Data Lakehouse của nền tảng thay vì dựng Data Warehouse riêng (xem ghi chú chi phí tại mục 9.4).
 
 ## 4.3. Giới hạn đề tài & vai trò của AI
 
@@ -190,7 +190,7 @@ Hai bộ KPI đo **hai đối tượng khác nhau**; các ngưỡng chênh lệc
 |:---|:---|:---|
 | FR-05 | Huấn luyện mô hình chuỗi thời gian | Dùng dữ liệu lịch sử tối thiểu 12 tháng; hỗ trợ tái huấn luyện định kỳ hàng tháng |
 | FR-06 | Dự báo lưu lượng khách | Xuất dự báo theo từng khung giờ (1 giờ/slot), cho từng chi nhánh, trong 7 ngày tới |
-| FR-07 | Nhận diện khung giờ cao điểm | Tự động gán nhãn "peak" cho khung giờ vượt ngưỡng 1,5 × lưu lượng trung bình của chi nhánh đó |
+| FR-07 | Nhận diện khung giờ cao điểm | Tự động gán nhãn peak cho khung giờ vượt ngưỡng 1,5 × lưu lượng trung bình của chi nhánh đó |
 | FR-08 | Quản lý phiên bản mô hình | Lưu artifact theo phiên bản (Model Registry), hỗ trợ rollback khi mô hình mới cho kết quả kém hơn |
 | FR-13 | So sánh đa mô hình (Model Benchmark) | Cho phép huấn luyện và đánh giá song song ≥ 4 phương pháp trên cùng bộ độ đo, lưu kết quả so sánh vào Model Registry |
 

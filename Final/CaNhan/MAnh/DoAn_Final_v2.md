@@ -9,7 +9,7 @@ Thông qua việc đánh giá 3 kịch bản kiến trúc, dự án lựa chọn
 
 Dự án được lên kế hoạch triển khai trong vòng 16 tuần (4 tháng) với 5 pha rõ ràng. Tổng mức đầu tư (CAPEX - Capital Expenditure) là **1.308.800.000 VNĐ**, và Tổng chi phí sở hữu (TCO - Total Cost of Ownership) trong 3 năm dự kiến là **5.209.160.000 VNĐ** — tương đương **khoảng 1,45% doanh thu chuỗi trong cùng kỳ**. Lợi ích quy đổi ước tính **~1.955.000.000 VNĐ/năm**, cho thời gian hoàn vốn trên dòng tiền ròng khoảng **1,7 năm**.
 
-**Khuyến nghị:** Ban Giám đốc phê duyệt chủ trương đầu tư và ngân sách CAPEX 1.308.800.000 VNĐ (chưa gồm dự phòng 10%), khởi động Pha 1 ngay trong quý tới. Rủi ro lớn nhất của phương án "không đầu tư" không nằm ở chi phí mà ở nghĩa vụ tuân thủ Nghị định 13/2023/NĐ-CP, với mức phạt có thể lên đến 5% tổng doanh thu.
+**Khuyến nghị:** Ban Giám đốc phê duyệt chủ trương đầu tư và ngân sách CAPEX 1.308.800.000 VNĐ (chưa gồm dự phòng 10%), khởi động Pha 1 ngay trong quý tới. Rủi ro lớn nhất của phương án không đầu tư không nằm ở chi phí mà ở nghĩa vụ tuân thủ Nghị định 13/2023/NĐ-CP, với mức phạt có thể lên đến 5% tổng doanh thu.
 
 ---
 
@@ -30,7 +30,7 @@ Các số liệu được đánh dấu **[MC]** là có minh chứng trực ti�
 **Sơ đồ kiến trúc hiện tại (AS-IS):**
 
 ```
-   34 CHI NHÁNH (34 hộ kinh doanh cá thể - 34 "ốc đảo" dữ liệu)
+   34 CHI NHÁNH (34 hộ kinh doanh cá thể - 34 hệ thống dữ liệu cô lập)
  ┌──────────────┐  ┌──────────────┐          ┌──────────────┐
  │  Chi nhánh 1 │  │  Chi nhánh 2 │   ...    │ Chi nhánh 34 │
  │ POS Net      │  │ POS Net      │          │ POS Net      │
@@ -133,7 +133,7 @@ Nhóm thực hiện song song hai đề tài trên cùng doanh nghiệp Ways Sta
 | **Độ trễ dự báo** | API dự báo end-to-end P95 ≤ 500ms (TR-P07) | Model inference thuần ≤ 200ms (nằm trong 500ms) |
 | **Độ chính xác mô hình** | Không phải KPI; chỉ là tiêu chí nghiệm thu Pilot (MAPE < 15%) | KPI lõi: MAPE < 15% tại Pilot → < 10% sau go-live 3 tháng |
 
-Chất lượng của riêng mô hình AI (MAPE, MAE, Precision, inference latency) được đặc tả và nghiệm thu trong đề tài thực hành *"Ứng dụng AI Time-Series Forecasting dự báo lưu lượng khách hàng đa chi nhánh"*. Đồ án chỉ cam kết các điều kiện hạ tầng để mô hình đạt được các chỉ số đó.
+Chất lượng của riêng mô hình AI (MAPE, MAE, Precision, inference latency) được đặc tả và nghiệm thu trong đề tài thực hành *Ứng dụng AI Time-Series Forecasting dự báo lưu lượng khách hàng đa chi nhánh*. Đồ án chỉ cam kết các điều kiện hạ tầng để mô hình đạt được các chỉ số đó.
 
 ---
 
@@ -143,7 +143,7 @@ Chất lượng của riêng mô hình AI (MAPE, MAE, Precision, inference laten
 
 - **Tên đơn vị thụ hưởng:** Chuỗi Ways Station — hệ sinh thái dịch vụ giải trí & thể thao tích hợp đa nền tảng.
 - **Quy mô và phạm vi hoạt động:** 34 chi nhánh trên địa bàn TP. Hồ Chí Minh và vùng lân cận, phát triển từ quy mô khoảng 22 chi nhánh trong vòng 2 năm gần nhất. Mỗi chi nhánh vận hành đồng thời nhiều mảng dịch vụ: **Gym (24/7), Gaming/Net, Billiards, Cầu lông, Hub (không gian làm việc), Giữ xe** và dịch vụ F&B kèm theo **[MC]**.
-- **Đặc điểm mô hình pháp lý — yếu tố quyết định kiến trúc:** mỗi chi nhánh được đăng ký dưới hình thức **hộ kinh doanh cá thể riêng biệt**. Mô hình này tối ưu về thuế và linh hoạt pháp lý, nhưng khiến hạ tầng CNTT bị chia cắt thành **34 "ốc đảo" dữ liệu độc lập**, không tồn tại một pháp nhân trung tâm sở hữu kho dữ liệu chung.
+- **Đặc điểm mô hình pháp lý — yếu tố quyết định kiến trúc:** mỗi chi nhánh được đăng ký dưới hình thức **hộ kinh doanh cá thể riêng biệt**. Mô hình này tối ưu về thuế và linh hoạt pháp lý, nhưng khiến hạ tầng CNTT bị chia cắt thành **34 hệ thống dữ liệu độc lập**, không tồn tại một pháp nhân trung tâm sở hữu kho dữ liệu chung.
 - **Cơ cấu tổ chức:** Trụ sở chính (HQ) gồm các phòng ban tập trung — **Phòng Nhân sự** (tuyển dụng, đào tạo, ký quỹ, đồng phục, chấm công, tính lương), **Phòng Điều phối** (lịch làm việc, ca phát sinh, nghỉ phép, vân tay chấm công in/out), **Bộ phận Kho hàng** (vật tư, hỗ trợ đăng nhập phần mềm) — điều hành 34 chi nhánh thông qua đội ngũ **Quản lý chi nhánh**, dưới là các vị trí vận hành (Thu ngân, Phục vụ, Giữ xe) **[MC]**.
 - **Quy trình hoạt động hiện hành:** đã được chuẩn hóa thành 08 bộ tài liệu SOP bắt buộc học thuộc theo từng vị trí. Toàn bộ liên lạc giữa chi nhánh và HQ đi qua **một tổng đài duy nhất (0889 555 559), phân luồng bằng phím số theo phòng ban**; hồ sơ nhân sự qua cổng `ns.ways.vn`; sự vụ phát sinh qua Zalo và sổ giao ca giấy **[MC]**.
 - **Tài liệu minh chứng:** xem **Phụ lục A — Danh mục minh chứng hiện trạng**.
@@ -519,7 +519,7 @@ $$\text{Payback} = \frac{1.439.680.000}{831.600.000} \approx \textbf{1,73 năm} 
 
 Trong chu kỳ 3 năm, dòng tiền ròng luỹ kế đạt **~2,49 tỷ VNĐ**, vượt vốn đầu tư ban đầu — dự án khả thi về tài chính ngay cả khi chưa tính giá trị tránh rủi ro pháp lý.
 
-> **Lưu ý về tính thận trọng:** hai dòng lợi ích "tối ưu giờ công" và "giảm hao hụt F&B" (tổng 580 triệu) phụ thuộc vào chất lượng mô hình dự báo AI thuộc đề tài thực hành. Trong kịch bản xấu nhất (loại bỏ hoàn toàn hai dòng này), dòng tiền ròng còn 251,6 triệu/năm và payback kéo dài ~5,7 năm — khi đó dự án vẫn được khuyến nghị phê duyệt dựa trên nghĩa vụ tuân thủ Nghị định 13/2023/NĐ-CP.
+> **Lưu ý về tính thận trọng:** hai dòng lợi ích tối ưu giờ công và giảm hao hụt F&B (tổng 580 triệu) phụ thuộc vào chất lượng mô hình dự báo AI thuộc đề tài thực hành. Trong kịch bản xấu nhất (loại bỏ hoàn toàn hai dòng này), dòng tiền ròng còn 251,6 triệu/năm và payback kéo dài ~5,7 năm — khi đó dự án vẫn được khuyến nghị phê duyệt dựa trên nghĩa vụ tuân thủ Nghị định 13/2023/NĐ-CP.
 
 ## 8.6. So sánh TCO 3 năm giữa 3 kịch bản
 
@@ -690,16 +690,16 @@ Do yêu cầu tích hợp phức tạp và tính bảo mật cao, phương thứ
 
 | # | Khẳng định trong AS-IS (mục 2.1) | Tài liệu minh chứng | Nội dung trích dẫn |
 |:---:|:---|:---|:---|
-| A1 | Tồn tại nhiều phần mềm rời rạc, không SSO | `THU NGÂN NET + BIDA`, `PHỤC VỤ GYM`, `PHỤC VỤ BIDA`, `PHỤC VỤ CẦU LÔNG` (mục I — Liên hệ) | Bộ phận kho hàng phụ trách "hỗ trợ đăng nhập PM MODUN gym và ACB portal" |
-| A2 | Hệ thống nhân sự tách rời | Toàn bộ 8 tài liệu SOP | Cổng `https://ns.ways.vn/` — "Nhân sự Ways", train hướng dẫn mở link và sử dụng chức năng |
+| A1 | Tồn tại nhiều phần mềm rời rạc, không SSO | `THU NGÂN NET + BIDA`, `PHỤC VỤ GYM`, `PHỤC VỤ BIDA`, `PHỤC VỤ CẦU LÔNG` (mục I — Liên hệ) | Bộ phận kho hàng phụ trách hỗ trợ đăng nhập PM MODUN gym và ACB portal |
+| A2 | Hệ thống nhân sự tách rời | Toàn bộ 8 tài liệu SOP | Cổng `https://ns.ways.vn/` — Nhân sự Ways, train hướng dẫn mở link và sử dụng chức năng |
 | A3 | 100% giao tiếp qua kênh thủ công — tổng đài | Toàn bộ 8 tài liệu SOP (mục I) | Một số hotline duy nhất 0889 555 559, phân luồng phím 2 (Nhân sự), phím 3 (Điều phối), phím 8 (Kho hàng) |
-| A4 | Kênh Zalo cá nhân xử lý dữ liệu PII | `GIỮ XE` (mục II — xử lý mất thẻ) | Chụp ảnh CCCD, cà vẹt xe, biên bản, thân xe, biển số và hình ảnh khách, "gửi qua Zalo cho Quản lý" |
-| A5 | Sổ giấy trong quy trình vận hành | `GIỮ XE` | "Ghi số thẻ bị mất vào sổ giao ca", nộp biên bản giấy cho Thu ngân |
-| A6 | Thu thập dữ liệu sinh trắc học Face ID | `THU NGÂN GYM` | Phòng tập "check-in bằng FACE ID"; khách được mời ra quầy "để lấy Face ID" |
-| A7 | Thu thập thông tin cá nhân trên giấy | `THU NGÂN GYM` | Đưa "phiếu điền thông tin" cho khách để tạo hội viên |
+| A4 | Kênh Zalo cá nhân xử lý dữ liệu PII | `GIỮ XE` (mục II — xử lý mất thẻ) | Chụp ảnh CCCD, cà vẹt xe, biên bản, thân xe, biển số và hình ảnh khách, gửi qua Zalo cho Quản lý |
+| A5 | Sổ giấy trong quy trình vận hành | `GIỮ XE` | Ghi số thẻ bị mất vào sổ giao ca, nộp biên bản giấy cho Thu ngân |
+| A6 | Thu thập dữ liệu sinh trắc học Face ID | `THU NGÂN GYM` | Phòng tập check-in bằng FACE ID; khách được mời ra quầy để lấy Face ID |
+| A7 | Thu thập thông tin cá nhân trên giấy | `THU NGÂN GYM` | Đưa phiếu điền thông tin cho khách để tạo hội viên |
 | A8 | Cơ cấu tổ chức HQ 3 phòng ban tập trung | Toàn bộ 8 tài liệu SOP (mục I) | Phòng Nhân sự; Phòng Điều phối; Bộ phận Kho hàng; kênh phản ánh `hr@waysstation.vn` |
 | A9 | Mô hình đa dịch vụ tại mỗi chi nhánh | 8 tài liệu SOP theo vị trí | Gym, Net, Bida, Cầu lông, Hub, Giữ xe, F&B |
-| A10 | Chấm công bằng vân tay, quản lý ca thủ công | Toàn bộ 8 tài liệu SOP (mục I — phím 3) | Phòng Điều phối phụ trách "lấy vân tay, chấm công in/out", ca làm phát sinh |
+| A10 | Chấm công bằng vân tay, quản lý ca thủ công | Toàn bộ 8 tài liệu SOP (mục I — phím 3) | Phòng Điều phối phụ trách lấy vân tay, chấm công in/out, ca làm phát sinh |
 
 ---
 
