@@ -4,7 +4,9 @@ Thư mục này chứa các tài liệu, slide báo cáo, và kịch bản thuy�
 
 > **📌 LƯU Ý CHUNG KHI THUYẾT TRÌNH:**
 > - Yêu cầu tất cả các thành viên trình bày **từ tốn, chậm rãi và rõ chữ**. Hãy đảm bảo cô và người nghe có thể theo kịp các nội dung quan trọng, đặc biệt là các con số và thông số kỹ thuật.
-> - **Yêu cầu quay video:** Video báo cáo phải hiển thị đồng thời màn hình trình chiếu (slide) và khuôn mặt của người đang thuyết trình.
+> - **Yêu cầu quay video:** 
+>   - Video báo cáo phải hiển thị đồng thời màn hình trình chiếu (slide) và khuôn mặt của người đang thuyết trình.
+>   - Mỗi thành viên bắt buộc phải quay **2 video riêng biệt**: 1 video cho phần thuyết trình bài **Đồ án** và 1 video cho phần thuyết trình bài **Thực hành**.
 > - **Deadline nộp video:** 19:00 (7h tối) ngày 19/09.
 
 ## 1. Đồ án môn học
