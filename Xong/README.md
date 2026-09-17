@@ -7,6 +7,7 @@ Thư mục này chứa các tài liệu, slide báo cáo, và kịch bản thuy�
 > - **Yêu cầu quay video:** 
 >   - Video báo cáo phải hiển thị đồng thời màn hình trình chiếu (slide) và khuôn mặt của người đang thuyết trình.
 >   - Mỗi thành viên bắt buộc phải quay **2 video riêng biệt**: 1 video cho phần thuyết trình bài **Đồ án** và 1 video cho phần thuyết trình bài **Thực hành**.
+> - **Nơi nộp video:** Tải video lên thư mục Google Drive tại [link này](https://drive.google.com/drive/folders/11B7u8U14kfGGNqPht37U8Y9A8S5R1icn?usp=sharing).
 > - **Deadline nộp video:** 19:00 (7h tối) ngày 19/09.
 
 ## 1. Đồ án môn học
