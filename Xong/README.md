@@ -10,6 +10,10 @@ Thư mục này chứa các tài liệu, slide báo cáo, và kịch bản thuy�
 > - **Nơi nộp video:** Tải video lên thư mục Google Drive tại [link này](https://drive.google.com/drive/folders/11B7u8U14kfGGNqPht37U8Y9A8S5R1icn?usp=sharing).
 > - **Deadline nộp video:** 19:00 (7h tối) ngày 19/09.
 
+
+- **[Báo Cáo Nộp](../Final/CaNhan/MAnh/README.md)**: Các tài liệu báo cáo final của đồ án và thực hành.
+
+
 ## 1. Đồ án môn học
 
 ### Tài liệu
@@ -49,3 +53,5 @@ Thư mục này chứa các tài liệu, slide báo cáo, và kịch bản thuy�
 | Vũ Duy | 13–14 | Quy trình TO-BE, pipeline, kiến trúc | 3'00" |
 | Trần Anh Tú | 15–16 | Kế hoạch triển khai, nhân sự, dự toán | 3'00" |
 | Lê Quang Đạt | 17–18 | Rủi ro, kiểm thử, vận hành, nghiệm thu | 3'00" |
+
+---
