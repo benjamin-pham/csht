@@ -1,4 +1,4 @@
-# Báo Cáo Cá Nhân - Mẫn (MAnh)
+# Báo Cáo Final
 
 Thư mục này chứa các tài liệu báo cáo cá nhân bản Final (v2) cho Đồ án và Thực hành.
 
